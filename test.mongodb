@@ -9,6 +9,7 @@ use('mongodbVSCodePlaygroundDB');
 // The drop() command destroys all data from a collection.
 // Make sure you run it against the correct database and collection.
 db.sales.drop();
+db.allergens.drop();
 
 // Insert a few documents into the sales collection.
 db.sales.insertMany([
@@ -22,6 +23,22 @@ db.sales.insertMany([
   { '_id': 8, 'item': 'abc', 'price': 10, 'quantity': 5, 'date': new Date('2016-02-06T20:20:13Z') },
 ]);
 
+
+db.allergens.insertMany([
+    { '_id': 1, 'Allergen': 'Milk'},
+    { '_id': 2, 'Allergen':'Peanuts'},
+    { '_id': 3, 'Allergen': 'Soy'},
+    { '_id': 4, 'Allergen': 'Eggs'},
+    { '_id': 5, 'Allergen': 'Treenut'},
+    { '_id': 6, 'Allergen': 'Shellfish'},
+    { '_id': 7, 'Allergen': 'Wheat'},
+    { '_id': 8, 'Allergen': 'Fish'},
+    { '_id': 9, 'Allergen': 'Sesame'},
+]);
+
+db.allergens.find({Allergen: 'Milk'})
+db.allergens.aggregate([{$match: {Allergen: "Milk"}}, {$project:{_id:1 } } 
+]);
 // Run a find command to view items sold on April 4th, 2014.
 db.sales.find({ date: { $gte: new Date('2014-04-04'), $lt: new Date('2014-04-05') } });
 
