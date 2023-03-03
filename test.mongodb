@@ -1,3 +1,5 @@
+//test queries to structure the collections and create
+//the actual restaurant owner input queries for their allergens
 use('mongodbVSCodePlaygroundDB');
 
 
@@ -21,5 +23,3 @@ db.allergens.updateOne({RestaurantName: "testname"}, {$push:{ ["Milk"]: ["MilkIt
 
 //peanut items go here
 db.allergens.updateOne({RestaurantName: "testname"}, {$push:{ ["Peanuts"]: ["PItem", "PItem2","P3"] }})
-
-
