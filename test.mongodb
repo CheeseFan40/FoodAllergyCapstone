@@ -23,3 +23,4 @@ db.allergens.updateOne({RestaurantName: "testname"}, {$push:{ ["Milk"]: ["MilkIt
 
 //peanut items go here
 db.allergens.updateOne({RestaurantName: "testname"}, {$push:{ ["Peanuts"]: ["PItem", "PItem2","P3"] }})
+
