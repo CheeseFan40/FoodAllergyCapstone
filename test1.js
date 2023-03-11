@@ -1,4 +1,4 @@
-/ Require the mongoose module
+// Require the mongoose module
 const express = require('express')
 const mongoose = require('mongoose');
 const app = express()
