@@ -1,5 +1,4 @@
-
-// Require the mongoose module
+/ Require the mongoose module
 const express = require('express')
 const mongoose = require('mongoose');
 const app = express()
@@ -18,8 +17,9 @@ mongoose.connect("mongodb+srv://AlexM:gp0RAeekxy72CmVG@cluster0.edbmsue.mongodb.
   
 // Defining User schema
 const userSchema = new Schema(
-    { name: String, age: Number, email: String }
+    {RestaurantName: String, Milk: Array, Peanuts: Array, Soy: Array, Wheat: Array, Eggs: Array, Treetnut: Array, Shellfish: Array, Sesame: Array, Fish: Array }
 )
+
   
 // Defining User model
 const User = mongoose.model('User', userSchema);
@@ -27,6 +27,15 @@ const User = mongoose.model('User', userSchema);
 // Create collection of Model
 User.createCollection().then(function (collection) {
     console.log('Collection is created!');
+});
+
+User.insertMany({RestaurantName: 'Heidelberg'}).then(function () {    console.log("success");}).catch(function(err) {    console.log(err);});
+
+User.updateMany({$push: {Milk:"menuitem1"}}).then(function(){
+    console.log("success! item has been appended")
+})
+.catch(function(err){
+    console.log(err)
 });
 
 app.get('/', (req, res) => res.send("Hello World!"))
