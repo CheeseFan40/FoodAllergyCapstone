@@ -13,7 +13,7 @@ function initialize(passport, getUserByEmail, getUserByID) {
             if (await bcrypt.compare(password, user.password)) { //compares password to user password
                 return done(null, user) //returns the user of the authentication
             } else {
-                return done( null, false, {message: 'This is not the correct passowrd'})
+                return done( null, false, {message: 'This is not the correct password'})
             }
         } catch (e) {
             return done(e)

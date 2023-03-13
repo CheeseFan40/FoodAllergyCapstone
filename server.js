@@ -104,7 +104,7 @@ app.get('/register', checkNotAuthenticated , (req, res) => {
 
 app.post('/register', checkNotAuthenticated, async (req, res) => {
     try {
-        const hashedPassword = await bcrypt.hash(req.body.passowrd, 8)
+        const hashedPassword = await bcrypt.hash(req.body.password, 8)
         usrs.push({
             id: Date.now().toString(),
             name: req.body.name,
