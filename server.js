@@ -20,7 +20,6 @@ const methodOverride = require('method-override')
 
 
 // Set Up the Database connection
-//mongoose.connect("mongodb+srv://AlexM:gp0RAeekxy72CmVG@cluster0.edbmsue.mongodb.net/?retryWrites=true&w=majority", {
 mongoose.connect("mongodb+srv://MitchZ:T2GRPvC0AkjRuDL8@cluster0.edbmsue.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
