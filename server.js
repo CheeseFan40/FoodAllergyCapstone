@@ -3,11 +3,14 @@ if (process.env.NODE_ENV !=='production'){
 }
 
 // Required Modules
+const prompt=require("prompt-sync")({sigint:true});
 const mongoose = require('mongoose');
 const express = require('express')
+
 const app = express()
 const port = 3000
 const Schema = mongoose.Schema;
+
 
 const bcrypt = require('bcrypt')
 const passport = require('passport')
@@ -15,13 +18,15 @@ const flash = require('express-flash')
 const session = require('express-session')
 const methodOverride = require('method-override')
 
-  
+
 // Set Up the Database connection
+//mongoose.connect("mongodb+srv://AlexM:gp0RAeekxy72CmVG@cluster0.edbmsue.mongodb.net/?retryWrites=true&w=majority", {
 mongoose.connect("mongodb+srv://MitchZ:T2GRPvC0AkjRuDL8@cluster0.edbmsue.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then((result) => {
     console.log('MongoDB Connection Established!')
+
 }).catch((err) => {
     console.log(err)
 });
@@ -35,21 +40,137 @@ const userSchema = new Schema(
 // Defining User model
 const User = mongoose.model('User', userSchema);
   
+
 // Create collection of Model
 User.createCollection().then(function (collection) {
     console.log('Collection is created!');
 });
 
-User.insertMany({RestaurantName: 'Heidelberg'}).then(function () {    console.log("success");}).catch(function(err) {    console.log(err);});
-// Needs better log message ^
 
-User.updateMany({$push: {Milk:"menuitem1"}}).then(function(){
-    console.log("Success! item has been appended.")
+var userinput = prompt("Restaurant Name?");
+
+var milkinput = prompt("Milk items?")
+var peanutinput = prompt("Peanut items?")
+var soyinput = prompt("Soy items?")
+var wheatinput = prompt("Wheat items?")
+var eggsinput = prompt("Eggs items?")
+var treenutinput = prompt("Treenut items?")
+var shellfishinput = prompt("Shellfish items?")
+var sesameinput = prompt("Sesame items?")
+var fishinput = prompt("Fish items?")
+
+//function to see if a current document exists, if it doesn't create 
+//a new one according to the restaurant name input
+async function tester(){
+let exists = await User.exists({RestaurantName: userinput})
+console.log(exists)
+return exists
+}
+tester().then(function (collection){
+    if(collection){
+        console.log("exists")
+    }else{
+        User.insertMany({RestaurantName: userinput}).then(function () {
+            console.log("A new Restaurant has been added");}).catch(function(err) { 
+            console.log(err)
+        });
+    }
+})
+
+//comparisons functions for each allergen
+async function test2(){
+if(milkinput != ""){
+
+await User.updateMany({RestaurantName:userinput},{ $push: {Milk:milkinput}}).then(function(){
+    console.log("successfully added milk")
 })
 .catch(function(err){
     console.log(err)
 });
+}
 
+if(peanutinput != ""){
+
+await User.updateMany({RestaurantName:userinput},{ $push: {Peanuts:peanutinput}}).then(function(){
+    console.log("successfully added peanut")
+})
+.catch(function(err){
+    console.log(err)
+});
+}
+
+if(soyinput != ""){
+
+await User.updateMany({RestaurantName:userinput},{ $push: {Soy:soyinput}}).then(function(){
+    console.log("successfully added Soy item")
+})
+.catch(function(err){
+    console.log(err)
+});
+}
+
+if(wheatinput != ""){
+
+await User.updateMany({RestaurantName:userinput},{ $push: {Wheat:wheatinput}}).then(function(){
+    console.log("successfully added wheat item")
+})
+.catch(function(err){
+    console.log(err)
+});
+}
+
+if(eggsinput != ""){
+
+await User.updateMany({RestaurantName:userinput},{ $push: {Eggs:eggsinput}}).then(function(){
+    console.log("successfully added egg item")
+})
+.catch(function(err){
+    console.log(err)
+});
+}
+
+if(treenutinput != ""){
+
+await User.updateMany({RestaurantName:userinput},{ $push: {Treetnut:treenutinput}}).then(function(){
+    console.log("successfully added treenut item")
+})
+.catch(function(err){
+    console.log(err)
+});
+}
+
+if(shellfishinput != ""){
+
+await User.updateMany({RestaurantName:userinput},{ $push: {Shellfish:shellfishinput}}).then(function(){
+    console.log("successfully added shellfish item")
+
+})
+.catch(function(err){
+    console.log(err)
+});
+}
+
+if(sesameinput != ""){
+
+await User.updateMany({RestaurantName:userinput},{ $push: {Sesame:sesameinput}}).then(function(){
+    console.log("successfully added sesame item") 
+})
+.catch(function(err){
+    console.log(err)
+});
+}
+
+if(fishinput != ""){
+
+await User.updateMany({RestaurantName:userinput},{ $push: {Fish:fishinput}}).then(function(){
+    console.log("successfully added fish item")
+})
+.catch(function(err){
+    console.log(err)
+});
+}
+}
+test2();
 
 
 //Sets empty array
