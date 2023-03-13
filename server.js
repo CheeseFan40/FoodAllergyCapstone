@@ -46,6 +46,110 @@ User.createCollection().then(function (collection) {
 });
 
 
+
+//Sets empty array
+const usrs = []
+
+//Creates and authenticates password
+const createPassport = require('./passportConfig')//exported as initialized
+createPassport(
+    passport,
+    email => usrs.find(user => user.email === email),
+    id => usrs.find(user => user.id === id)
+)//initialized function that is initialize(passport, getUserByEmail, getUserById)
+
+
+//looks for the ejs file in the view folder
+app.set('view-engine', 'ejs')
+app.use(express.urlencoded({extended: false}))
+//to send warnings that the password is incorrect
+app.use(flash())
+//used to save info on the server
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+}))
+
+//Calls from passportConfig.js
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(methodOverride('_method'))
+
+
+//Checks the name with what is visible
+app.get('/', checkAuthenticated, (req, res) => { 
+    res.render('index.ejs', {name: req.user.name})
+})
+
+app.get('/login', checkNotAuthenticated, (req, res) => {
+    res.render('login.ejs')
+})
+
+//Uses post to login and send to index.ejs
+app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login',
+    failureFlash: true
+}))
+//Gets and posts register page, requires email
+app.get('/register', checkNotAuthenticated , (req, res) => {
+    res.render('register.ejs')
+})
+
+app.post('/register', checkNotAuthenticated, async (req, res) => {
+    try {
+        const hashedPassword = await bcrypt.hash(req.body.password, 8)
+        usrs.push({
+            id: Date.now().toString(),
+            name: req.body.name,
+            email: req.body.email,
+            password: hashedPassword
+        })
+        res.redirect('/login')
+    } catch {
+        res.redirect('/register')
+    }
+    console.log(usrs)
+})
+
+//logs usr out
+app.delete('logout', (req, res) => {
+    req.logOut()
+    res.redirect('/login')
+})
+
+//function for verifying
+function checkAuthenticated(req, res, next) {
+    if (req.isAuthenticated()){
+        return next()
+    }
+
+    res.redirect('/login')
+}
+
+//Checks auth and redirects to index.ejs
+function checkNotAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return res.redirect('/')
+    }
+    next()
+}
+
+
+//Accesses the CSS and JS files in the public folder
+app.use(express.static('public'))
+app.use('/css', express.static(__dirname + 'public/CSS'))
+app.use('/js', express.static(__dirname + 'public/JS'))
+
+app.listen(port, () => console.log(`Running on port ${port}`))
+
+
+
+// *** RESTAURANT INPUT *** 
+
+
+
 var userinput = prompt("Restaurant Name?");
 
 var milkinput = prompt("Milk items?")
@@ -170,101 +274,3 @@ await User.updateMany({RestaurantName:userinput},{ $push: {Fish:fishinput}}).the
 }
 }
 test2();
-
-
-//Sets empty array
-const usrs = []
-
-//Creates and authenticates password
-const createPassport = require('./passportConfig')//exported as initialized
-createPassport(
-    passport,
-    email => usrs.find(user => user.email === email),
-    id => usrs.find(user => user.id === id)
-)//initialized function that is initialize(passport, getUserByEmail, getUserById)
-
-
-//looks for the ejs file in the view folder
-app.set('view-engine', 'ejs')
-app.use(express.urlencoded({extended: false}))
-//to send warnings that the password is incorrect
-app.use(flash())
-//used to save info on the server
-app.use(session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false
-}))
-
-//Calls from passportConfig.js
-app.use(passport.initialize())
-app.use(passport.session())
-app.use(methodOverride('_method'))
-
-
-//Checks the name with what is visible
-app.get('/', checkAuthenticated, (req, res) => { 
-    res.render('index.ejs', {name: req.user.name})
-})
-
-app.get('/login', checkNotAuthenticated, (req, res) => {
-    res.render('login.ejs')
-})
-
-//Uses post to login and send to index.ejs
-app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/login',
-    failureFlash: true
-}))
-//Gets and posts register page, requires email
-app.get('/register', checkNotAuthenticated , (req, res) => {
-    res.render('register.ejs')
-})
-
-app.post('/register', checkNotAuthenticated, async (req, res) => {
-    try {
-        const hashedPassword = await bcrypt.hash(req.body.password, 8)
-        usrs.push({
-            id: Date.now().toString(),
-            name: req.body.name,
-            email: req.body.email,
-            password: hashedPassword
-        })
-        res.redirect('/login')
-    } catch {
-        res.redirect('/register')
-    }
-    console.log(usrs)
-})
-
-//logs usr out
-app.delete('logout', (req, res) => {
-    req.logOut()
-    res.redirect('/login')
-})
-
-//function for verifying
-function checkAuthenticated(req, res, next) {
-    if (req.isAuthenticated()){
-        return next()
-    }
-
-    res.redirect('/login')
-}
-
-//Checks auth and redirects to index.ejs
-function checkNotAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) {
-        return res.redirect('/')
-    }
-    next()
-}
-
-
-//Accesses the CSS and JS files in the public folder
-app.use(express.static('public'))
-app.use('/css', express.static(__dirname + 'public/CSS'))
-app.use('/js', express.static(__dirname + 'public/JS'))
-
-app.listen(port, () => console.log(`Running on port ${port}`))
