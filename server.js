@@ -19,7 +19,7 @@ const session = require('express-session')
 const methodOverride = require('method-override')
 
 
-// Set Up the Database connection
+// Sets up the Database Connection
 mongoose.connect("mongodb+srv://MitchZ:T2GRPvC0AkjRuDL8@cluster0.edbmsue.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -146,7 +146,7 @@ app.listen(port, () => console.log(`Running on port ${port}`))
 
 
 
-// *** RESTAURANT INPUT *** 
+// ********** RESTAURANT INPUT **********
 
 
 
