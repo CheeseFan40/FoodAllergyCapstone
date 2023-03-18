@@ -7,7 +7,7 @@
         body {
             background-image: url('background.png');
             background-repeat: no-repeat;
-            background-size: 100% 28%;
+            background-size: 100% 30%;
         }
 
         .account {
@@ -24,11 +24,7 @@
         }
 
         h3 {
-            text-align: center;
-        }
-
-        h4 {
-            margin-left: 55%;
+            margin-left: 40%;
         }
 
         .submit {
@@ -51,25 +47,30 @@
         <button class= "account" onclick="document.location='account.html'"><b>Account</b></button>
         <br>
         <br>
-        <h1>Sign In</h1>
+        <h1>Create Your Account</h1>
         <br>
-        <label for="username"><h3>Username</h3></label>
-        <input type="text" id="username" name="usernamer">
+        <form>
+            <label for="fname"><h3>First Name</h3></label>
+            <input type="text" id="fname" name="fname">
+            <br>
+            <label for="lname"><h3>Last Name</h3></label>
+            <input type="text" id="lname" name="lname">
+            <br>
+            <label for="email"><h3>Email</h3></label>
+            <input type="text" id="email" name="email">
+            <br>
+            <label for="username"><h3>Username</h3></label>
+            <input type="text" id="username" name="username">
+            <br>
+            <label for="password"><h3>Password</h3></label>
+            <input type="text" id="password" name="password">
+            <br>
+            <br>
+            <button class = "submit"><b>Submit</b></button>
+        </form>
         <br>
-        <label for="pwd"><h3>Password</h3></label>
-        <input type="password" id="pwd" name="pwd">
         <br>
         <br>
-        <button class= "submit" onclick="document.location='account-logged-in.html'"><b>Submit</b></button><h4><i>Forgot your password?</i></h4>-->
-        <br>
-        <br>
-        <br>
-        <h3>Don't have an account?</h3>
-        <a href="account-sign-up.html"><h1>Sign Up</h1></a>
-        <br>
-        <h3>Benefits:</h3>
-        <h3>Save allergens</h3>
-        <h3>Personalized experience</h3>
 
     </body>
     <script>

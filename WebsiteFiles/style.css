@@ -39,8 +39,10 @@ hr {
     background: #5DA271;
     padding: 5px 10px;
     font-size: 200%;
-    margin-left: 800px;
-    
+    width:fit-content;
+    margin-left: 400px;
+    margin-top: 220px;
+    position:absolute;
 }
 
 .about {
@@ -50,6 +52,9 @@ hr {
     background: #5DA271;
     padding: 5px 10px;
     font-size: 200%;
+    margin-left: 530px;
+    margin-top: 220px;
+    position:absolute;
 }
 
 .account {
@@ -59,4 +64,7 @@ hr {
     background: #5DA271;
     padding: 5px 10px;
     font-size: 200%;
+    margin-left: 662px;
+    margin-top: 220px;
+    position:absolute;
 }
