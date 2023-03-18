@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Account</title>
+    </head>
+    <style>
+        body {
+            background-image: url('background.png');
+            background-repeat: no-repeat;
+            background-size: 100% 290px;
+        }
+
+        .account {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        input {
+            margin-left: 40%;
+            width: 30%;
+            border: 2px solid #133C55;
+            padding: 10px 10px;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        h3 {
+            text-align: left;
+        }
+
+        h4 {
+            margin-left: 55%;
+        }
+
+        .apply {
+            font-family: "Verdana";
+            color: #E0FBFC;
+            text-align: center;
+            background: #5DA271;
+            padding: 5px 10px;
+            font-size: 100%;
+            width:fit-content;
+            margin-left: 40%;
+        }
+
+        .collapsible {
+            font-family: "Verdana";
+            text-align: left;
+            padding: 10px 10px 10px 10px;
+            font-size: 100%;
+            width:80%;
+            margin-left: 10%;
+        }
+
+        .active, .collapsible:hover {
+            background-color:darkgrey;
+        }
+
+        .content {
+            display: none;
+            overflow: hidden;
+        }
+
+    </style>
+    
+    <body>
+        <img src="CapstoneLogo.png" style="width:250px;height:250px">
+        <button class= "home" onclick="document.location='index.html'"><b>Home</b></button>
+        <button class= "about" onclick="document.location='about.html'"><b>About</b></button>
+        <button class= "account" onclick="document.location='account.html'"><b>Account</b></button>
+        <br>
+        <br>
+        <h1>Hello -username-!</h1>
+        <br>
+        <hr>
+        <button type="button" class="collapsible">Set Allergens</button>
+        <div class="content">
+            <p>
+                <h3>Milk</h3>
+            </p>
+            <br>
+            <h3>Eggs</h3>
+            <br>
+            <h3>Peanuts</h3>
+            <br>
+            <h3>Tree Nuts</h3>
+            <br>
+            <h3>Fish</h3>
+            <br>
+            <h3>Crustaceans</h3>
+            <br>
+            <h3>Wheat</h3>
+            <br>
+            <h3>Soy</h3>
+            <br>
+            <h3>Sesame</h3>
+            <button class = "apply"><b>Apply</b></button>
+        </div>
+        <br>
+        <hr>
+        
+
+    </body>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                 if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+</html>
