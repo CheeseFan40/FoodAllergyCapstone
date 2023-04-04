@@ -60,6 +60,73 @@
             overflow: hidden;
         }
 
+        .table {
+            margin-left: 40%;
+        }
+
+        .milk {
+            background:#5DA271;
+            border-radius: 50px;
+            height: 50px;
+            width: 50px;
+        }
+
+        .eggs {
+            background:#5DA271;
+            border-radius: 50px;
+            height: 50px;
+            width: 50px;
+        }
+
+        .peanuts {
+            background:#5DA271;
+            border-radius: 50px;
+            height: 50px;
+            width: 50px;
+        }
+
+        .treenuts {
+            background:#5DA271;
+            border-radius: 50px;
+            height: 50px;
+            width: 50px;
+        }
+
+        .fish {
+            background:#5DA271;
+            border-radius: 50px;
+            height: 50px;
+            width: 50px;
+        }
+
+        .crustaceans {
+            background:#5DA271;
+            border-radius: 50px;
+            height: 50px;
+            width: 50px;
+        }
+
+        .wheat {
+            background:#5DA271;
+            border-radius: 50px;
+            height: 50px;
+            width: 50px;
+        }
+
+        .soy {
+            background:#5DA271;
+            border-radius: 50px;
+            height: 50px;
+            width: 50px;
+        }
+
+        .sesame {
+            background:#5DA271;
+            border-radius: 50px;
+            height: 50px;
+            width: 50px;
+        }
+
     </style>
     
     <body>
@@ -74,30 +141,145 @@
         <hr>
         <button type="button" class="collapsible">Set Allergens</button>
         <div class="content">
-            <p>
-                <h3>Milk</h3>
-            </p>
             <br>
-            <h3>Eggs</h3>
-            <br>
-            <h3>Peanuts</h3>
-            <br>
-            <h3>Tree Nuts</h3>
-            <br>
-            <h3>Fish</h3>
-            <br>
-            <h3>Crustaceans</h3>
-            <br>
-            <h3>Wheat</h3>
-            <br>
-            <h3>Soy</h3>
-            <br>
-            <h3>Sesame</h3>
+            <div style="margin-left: 10%">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class= "milk" onclick="setPreferenceMilk()"></button>
+                        </td>
+                        <td>
+                            <h3>Milk</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class= "eggs" onclick="setPreferenceEggs()"></button>
+                        </td>
+                        <td>
+                            <h3>Eggs</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class= "peanuts" onclick="setPreferencePeanuts()"></button>
+                        </td>
+                        <td>
+                            <h3>Peanuts</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class= "treenuts" onclick="setPreferenceTreeNuts()"></button>
+                        </td>
+                        <td>
+                            <h3>Tree Nuts</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class= "fish" onclick="setPreferenceFish()"></button>
+                        </td>
+                        <td>
+                            <h3>Fish</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class= "crustaceans" onclick="setPreferenceCrustaceans()"></button>
+                        </td>
+                        <td>
+                            <h3>Crustaceans</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class= "wheat" onclick="setPreferenceWheat()"></button>
+                        </td>
+                        <td>
+                            <h3>Wheat</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class= "soy" onclick="setPreferenceSoy()"></button>
+                        </td>
+                        <td>
+                            <h3>Soy</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class= "sesame" onclick="setPreferenceSesame()"></button>
+                        </td>
+                        <td>
+                            <h3>Sesame</h3>
+                        </td>
+                    </tr>
+                </table>
+            </div>
             <button class = "apply"><b>Apply</b></button>
         </div>
         <br>
         <hr>
-        
+        <div>
+            <button class="apply" onclick="resetUsername()"><b>Reset Username</b></button>
+        </div>
+        <br>
+        </body>
+        <div>
+            <button class="apply" onclick="resetPassword()"><b>Reset Password</b></button>
+        </div>
+        <br>
+        <hr>
+        <script>
+            function resetUsername() {
+                const email = "tawhhp@umsystem.edu";
+
+                fetch('/reset-username', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.strinify({ email })
+                })
+                .then(responce => responce.json())
+                .then(data => {
+
+                    alert(data.message);
+                })
+                .catch(error => {
+
+                    console.error(error);
+                });
+            }
+        </script>
+        <script>
+            function resetPassword() {
+                const email = "tawhhp@umsystem.edu";
+
+                fetch('/reset-password', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.strinify({ email })
+                })
+                .then(responce => responce.json())
+                .then(data => {
+
+                    alert(data.message);
+                })
+                .catch(error => {
+
+                    console.error(error);
+                });
+            }
+        </script>
 
     </body>
     <script>
@@ -115,5 +297,132 @@
                 }
             });
         }
+        
+        var milk = true;
+        function setPreferenceMilk()
+        {
+           if (document.querySelector(".milk").style.background = "#5DA271") {
+                document.querySelector(".milk").style.background = "#EE6C4D";
+                milk = false;
+           }
+           else if(document.querySelector(".milk").style.background = "#EE6C4D") {
+                 document.querySelector(".milk").style.background = "#5DA271";
+                milk = true;
+            }
+           
+        } 
+
+        var eggs = true;
+        function setPreferenceEggs()
+        {
+           if (document.querySelector(".eggs").style.background = "#5DA271") {
+                document.querySelector(".eggs").style.background = "#EE6C4D";
+                eggs = false;
+           }
+           else if(document.querySelector(".eggs").style.background = "#EE6C4D") {
+                 document.querySelector(".eggs").style.background = "#5DA271";
+                 eggs = true;
+            }
+           
+        } 
+
+        var peanuts = true;
+        function setPreferencePeanuts()
+        {
+           if (document.querySelector(".peanuts").style.background = "#5DA271") {
+                document.querySelector(".peanuts").style.background = "#EE6C4D";
+                peanuts = false;
+           }
+           else if(document.querySelector(".peanuts").style.background = "#EE6C4D") {
+                 document.querySelector(".peanuts").style.background = "#5DA271";
+                 peanuts = true;
+            }
+           
+        } 
+
+        var treenuts = true;
+        function setPreferenceTreeNuts()
+        {
+           if (document.querySelector(".treenuts").style.background = "#5DA271") {
+                document.querySelector(".treenuts").style.background = "#EE6C4D";
+                treenuts = false;
+           }
+           else if(document.querySelector(".treenuts").style.background = "#EE6C4D") {
+                 document.querySelector(".treenuts").style.background = "#5DA271";
+                 treenuts = true;
+            }
+           
+        } 
+
+        var fish = true;
+        function setPreferenceFish()
+        {
+           if (document.querySelector(".fish").style.background = "#5DA271") {
+                document.querySelector(".fish").style.background = "#EE6C4D";
+                fish = false;
+           }
+           else if(document.querySelector(".fish").style.background = "#EE6C4D") {
+                 document.querySelector(".fish").style.background = "#5DA271";
+                 fish = true;
+            }
+           
+        } 
+
+        var crustaceans = true;
+        function setPreferenceCrustaceans()
+        {
+           if (document.querySelector(".crustaceans").style.background = "#5DA271") {
+                document.querySelector(".crustaceans").style.background = "#EE6C4D";
+                crustaceans = false;
+           }
+           else if(document.querySelector(".crustaceans").style.background = "#EE6C4D") {
+                 document.querySelector(".crustaceans").style.background = "#5DA271";
+                 crustaceans = true;
+            }
+           
+        } 
+
+        var wheat = true;
+        function setPreferenceWheat()
+        {
+           if (document.querySelector(".wheat").style.background = "#5DA271") {
+                document.querySelector(".wheat").style.background = "#EE6C4D";
+                wheat = false;
+           }
+           else if(document.querySelector(".wheat").style.background = "#EE6C4D") {
+                 document.querySelector(".wheat").style.background = "#5DA271";
+                 wheat = true;
+            }
+           
+        } 
+
+        var soy = true;
+        function setPreferenceSoy()
+        {
+           if (document.querySelector(".soy").style.background = "#5DA271") {
+                document.querySelector(".soy").style.background = "#EE6C4D";
+                soy = false;
+           }
+           else if(document.querySelector(".soy").style.background = "#EE6C4D") {
+                 document.querySelector(".soy").style.background = "#5DA271";
+                 soy = true;
+            }
+           
+        } 
+
+        var sesame = true;
+        function setPreferenceSesame()
+        {
+           if (document.querySelector(".sesame").style.background = "#5DA271") {
+                document.querySelector(".sesame").style.background = "#EE6C4D";
+                sesame = false;
+           }
+           else if(document.querySelector(".sesame").style.background = "#EE6C4D") {
+                 document.querySelector(".sesame").style.background = "#5DA271";
+                 sesame = true;
+            }
+           
+        } 
+
     </script>
 </html>
