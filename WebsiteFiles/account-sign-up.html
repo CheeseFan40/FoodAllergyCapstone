@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="CSS/style.css">
         <title>Account</title>
     </head>
     <style>
@@ -42,32 +42,31 @@
     
     <body>
         <img src="CapstoneLogo.png" style="width:250px;height:250px">
-        <button class= "home" onclick="document.location='index.html'"><b>Home</b></button>
+        <button class= "home" onclick="document.location='index.ejs'"><b>Home</b></button>
         <button class= "about" onclick="document.location='about.html'"><b>About</b></button>
         <button class= "account" onclick="document.location='account.html'"><b>Account</b></button>
         <br>
         <br>
         <h1>Create Your Account</h1>
         <br>
-        <form>
-            <label for="fname"><h3>First Name</h3></label>
-            <input type="text" id="fname" name="fname">
-            <br>
-            <label for="lname"><h3>Last Name</h3></label>
-            <input type="text" id="lname" name="lname">
-            <br>
-            <label for="email"><h3>Email</h3></label>
-            <input type="text" id="email" name="email">
-            <br>
-            <label for="username"><h3>Username</h3></label>
-            <input type="text" id="username" name="username">
-            <br>
-            <label for="password"><h3>Password</h3></label>
-            <input type="text" id="password" name="password">
-            <br>
-            <br>
-            <button class = "submit"><b>Submit</b></button>
-        </form>
+<form action="/register" method="POST">
+    <div>
+        <label for="name">User</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" required>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="text" id="password" name="password" required>
+    </div>
+    <section>
+        <button type="submit">Submit</button>
+    </section>
+    <a href="/login">Login</a>
+</form>
         <br>
         <br>
         <br>
