@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="CSS/style.css">
         <title>Account</title>
     </head>
     <style>
@@ -53,13 +53,19 @@
         <br>
         <h1>Sign In</h1>
         <br>
-        <label for="username"><h3>Username</h3></label>
-        <input type="text" id="username" name="usernamer">
-        <br>
-        <label for="pwd"><h3>Password</h3></label>
-        <input type="password" id="pwd" name="pwd">
-        <br>
-        <br>
+        <form action="/login" method="POST">
+
+            <div>
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="test" id="password" name="password" required>
+            </div>
+            <section>
+                <button type="submit">Login</button>
+            </section>
         <button class= "submit" onclick="document.location='account-logged-in.html'"><b>Submit</b></button><h5><i>Forgot your password?</i></h5>
         <br>
         <br>
@@ -76,3 +82,25 @@
         
     </script>
 </html>
+
+<!-- NEEDS TO BE INCLUDED -->
+
+
+<form action="/login" method="POST">
+
+    <div>
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" required>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="test" id="password" name="password" required>
+    </div>
+    <section>
+        <button type="submit">Login</button>
+    </section>
+    <a href="/register">Create Login</a>
+</form>
+    
+        <script src="myJS.js" async defer></script>
+    </body>
