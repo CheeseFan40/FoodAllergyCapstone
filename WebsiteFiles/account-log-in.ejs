@@ -46,14 +46,14 @@
     
     <body>
         <img src="CapstoneLogo.png" style="width:250px;height:250px">
-        <button class= "home" onclick="document.location='index.html'"><b>Home</b></button>
-        <button class= "about" onclick="document.location='about.html'"><b>About</b></button>
-        <button class= "account" onclick="document.location='account.html'"><b>Account</b></button>
+        <button class= "home" onclick="document.location='index.ejs'"><b>Home</b></button>
+        <button class= "about" onclick="document.location='about.ejs'"><b>About</b></button>
+        <button class= "account" onclick="document.location='account.ejs'"><b>Account</b></button>
         <br>
         <br>
         <h1>Sign In</h1>
         <br>
-        <form action="/login" method="POST">
+        <form action="/account-log-in" method="POST">
 
             <div>
                 <label for="email">Email</label>
@@ -63,15 +63,12 @@
                 <label for="password">Password</label>
                 <input type="test" id="password" name="password" required>
             </div>
-            <section>
-                <button type="submit">Login</button>
-            </section>
-        <button class= "submit" onclick="document.location='account-logged-in.html'"><b>Submit</b></button><h5><i>Forgot your password?</i></h5>
+        <button type="submit"><b>Login</b></button><h5><i>Forgot your password?</i></h5>
         <br>
         <br>
         <br>
         <h3>Don't have an account?</h3>
-        <a href="account-sign-up.html"><h1>Sign Up</h1></a>
+        <a href="account-sign-up.ejs"><h1>Sign Up</h1></a>
         <br>
         <h3>Benefits:</h3>
         <h3>Save allergens</h3>

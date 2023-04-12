@@ -43,13 +43,13 @@
     <body>
         <img src="CapstoneLogo.png" style="width:250px;height:250px">
         <button class= "home" onclick="document.location='index.ejs'"><b>Home</b></button>
-        <button class= "about" onclick="document.location='about.html'"><b>About</b></button>
-        <button class= "account" onclick="document.location='account.html'"><b>Account</b></button>
+        <button class= "about" onclick="document.location='about.ejs'"><b>About</b></button>
+        <button class= "account" onclick="document.location='account.ejs'"><b>Account</b></button>
         <br>
         <br>
         <h1>Create Your Account</h1>
         <br>
-<form action="/register" method="POST">
+<form action="/account-sign-up.ejs" method="POST">
     <div>
         <label for="name">User</label>
         <input type="text" id="name" name="name" required>

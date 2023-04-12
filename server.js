@@ -82,22 +82,22 @@ app.get('/', checkAuthenticated, (req, res) => {
     res.render('index.ejs', {name: req.user.name})
 })
 
-app.get('/login', checkNotAuthenticated, (req, res) => {
-    res.render('login.ejs')
+app.get('/account-log-in', checkNotAuthenticated, (req, res) => {
+    res.render('account-log-in.ejs')
 })
 
 //Uses post to login and send to index.ejs
-app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/login',
+app.post('/account-log-in', checkNotAuthenticated, passport.authenticate('local', {
+    successRedirect: '/account-logged-in',
+    failureRedirect: '/account-log-in',
     failureFlash: true
 }))
 //Gets and posts register page, requires email
-app.get('/register', checkNotAuthenticated , (req, res) => {
-    res.render('register.ejs')
+app.get('/account-sign-up', checkNotAuthenticated , (req, res) => {
+    res.render('account-sign-up.ejs')
 })
 
-app.post('/register', checkNotAuthenticated, async (req, res) => {
+app.post('/account-sign-up', checkNotAuthenticated, async (req, res) => {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 8)
         usrs.push({
@@ -106,9 +106,9 @@ app.post('/register', checkNotAuthenticated, async (req, res) => {
             email: req.body.email,
             password: hashedPassword
         })
-        res.redirect('/login')
+        res.redirect('/account-log-in')
     } catch {
-        res.redirect('/register')
+        res.redirect('/account-sign-up')
     }
     console.log(usrs)
 })
@@ -116,7 +116,7 @@ app.post('/register', checkNotAuthenticated, async (req, res) => {
 //logs usr out
 app.delete('logout', (req, res) => {
     req.logOut()
-    res.redirect('/login')
+    res.redirect('/account-log-in')
 })
 
 //function for verifying
@@ -125,7 +125,7 @@ function checkAuthenticated(req, res, next) {
         return next()
     }
 
-    res.redirect('/login')
+    res.redirect('/account-log-in')
 }
 
 //Checks auth and redirects to index.ejs
