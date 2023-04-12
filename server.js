@@ -82,22 +82,22 @@ app.get('/', checkAuthenticated, (req, res) => {
     res.render('index.ejs', {name: req.user.name})
 })
 
-app.get('/account-log-in', checkNotAuthenticated, (req, res) => {
+app.get('/account-log-in.ejs', checkNotAuthenticated, (req, res) => {
     res.render('account-log-in.ejs')
 })
 
 //Uses post to login and send to index.ejs
-app.post('/account-log-in', checkNotAuthenticated, passport.authenticate('local', {
-    successRedirect: '/account-logged-in',
-    failureRedirect: '/account-log-in',
+app.post('/account-log-in.ejs', checkNotAuthenticated, passport.authenticate('local', {
+    successRedirect: '/account-logged-in.ejs',
+    failureRedirect: '/account-log-in.ejs',
     failureFlash: true
 }))
 //Gets and posts register page, requires email
-app.get('/account-sign-up', checkNotAuthenticated , (req, res) => {
+app.get('/account-sign-up.ejs', checkNotAuthenticated , (req, res) => {
     res.render('account-sign-up.ejs')
 })
 
-app.post('/account-sign-up', checkNotAuthenticated, async (req, res) => {
+app.post('/account-sign-up.ejs', checkNotAuthenticated, async (req, res) => {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 8)
         usrs.push({
@@ -106,9 +106,9 @@ app.post('/account-sign-up', checkNotAuthenticated, async (req, res) => {
             email: req.body.email,
             password: hashedPassword
         })
-        res.redirect('/account-log-in')
+        res.redirect('/account-log-in.ejs')
     } catch {
-        res.redirect('/account-sign-up')
+        res.redirect('/account-sign-up.ejs')
     }
     console.log(usrs)
 })
@@ -116,7 +116,7 @@ app.post('/account-sign-up', checkNotAuthenticated, async (req, res) => {
 //logs usr out
 app.delete('logout', (req, res) => {
     req.logOut()
-    res.redirect('/account-log-in')
+    res.redirect('/account-log-in.ejs')
 })
 
 //function for verifying
@@ -125,7 +125,7 @@ function checkAuthenticated(req, res, next) {
         return next()
     }
 
-    res.redirect('/account-log-in')
+    res.redirect('/account-log-in.ejs')
 }
 
 //Checks auth and redirects to index.ejs
