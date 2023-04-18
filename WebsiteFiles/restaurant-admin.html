@@ -7,7 +7,7 @@
         body {
             background-image: url('background.png');
             background-repeat: no-repeat;
-            background-size: 100% 30%;
+            background-size: 100% 28%;
         }
 
         .account {
@@ -24,13 +24,6 @@
         }
 
         .submit {
-            font-family: "Verdana";
-            color: #E0FBFC;
-            text-align: center;
-            background: #5DA271;
-            padding: 5px 10px;
-            font-size: 100%;
-            width:fit-content;
             margin-left: 20%;
         }
 
@@ -44,6 +37,10 @@
             width:fit-content;
             margin-left: 20%;
         }
+
+        h2 {
+            color:#133C55;
+        }
     </style>
 
     <body>
@@ -53,7 +50,9 @@
         <button class= "account" onclick="document.location='account.html'"><b>Account</b></button>
         <br>
         <br>
-        <h1>Manage the Database</h1>
+        <h1>Welcome ~username~!</h1>
+        <h2>Thank you for participating and helping ease the dining experience.</h2>
+        <h2>Please add one menu item at a time that contains the allergens, with the last being any item without any of the listed allergens above.</h2>
         <br>
         <div style="margin-left: 20%">
             <table>
@@ -66,28 +65,48 @@
                     <td><input type="text" id="rname" name="rname"></td>
                 </tr>
                 <tr>
-                    <td><label for="location"><h3>Restaurant Location</h3></label></td>
-                    <td><input type="text" id="location" name="location"></td>
+                    <td><label for="rMilk"><h3>Milk</h3></label></td>
+                    <td><input type="text" id="rMilk" name="location"></td>
                 </tr>
                 <tr>
-                    <td><label for="menu"><h3>Menu Item</h3></label></td>
-                    <td><input type="text" id="menu" name="menu"></td>
+                    <td><label for="rEggs"><h3>Eggs</h3></label></td>
+                    <td><input type="text" id="rEggs" name="location"></td>
                 </tr>
                 <tr>
-                    <td><label for="description"><h3>Item Description</h3></label></td>
-                    <td><input type="text" id="description" name="description"></td>
+                    <td><label for="rPeanuts"><h3>Peanuts</h3></label></td>
+                    <td><input type="text" id="rPeanuts name="location"></td>
                 </tr>
                 <tr>
-                    <td><label for="allergy"><h3>Item Allergies</h3></label></td>
-                    <td><input type="text" id="allergy" name="allergy"></td>
+                    <td><label for="rTree Nuts"><h3>Tree Nuts</h3></label></td>
+                    <td><input type="text" id="rTree Nuts" name="location"></td>
+                </tr>
+                <tr>
+                    <td><label for="rFish"><h3>Fish</h3></label></td>
+                    <td><input type="text" id="rFish" name="location"></td>
+                </tr>
+                <tr>
+                    <td><label for="rCrustaceans"><h3>Crustaceans</h3></label></td>
+                    <td><input type="text" id="rCrustaceans" name="location"></td>
+                </tr>
+                <tr>
+                    <td><label for="rWheat"><h3>Wheat</h3></label></td>
+                    <td><input type="text" id="rWheat" name="location"></td>
+                </tr>
+                <tr>
+                    <td><label for="rSoy"><h3>Soy</h3></label></td>
+                    <td><input type="text" id="rSoy" name="location"></td>
+                </tr>
+                <tr>
+                    <td><label for="rSesame"><h3>Sesame</h3></label></td>
+                    <td><input type="text" id="rSesame" name="location"></td>
+                </tr>
+                <tr>
+                    <td><label for="rNA"><h3>None Above</h3></label></td>
+                    <td><input type="text" id="rNA" name="location"></td>
                 </tr>
                 <tr>
                     <td>
-                        <select name="Options" id="options">
-                            <option value="add">Add</option>
-                            <option value="edit">Edit</option>
-                            <option value="delete">Delete</option>
-                        </select>
+                        
                     </td>
                     <td><button class = "submit">Submit</button></td>
                 </tr>
