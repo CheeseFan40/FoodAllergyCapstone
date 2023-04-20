@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Account</title>
+    </head>
+    <style>
+        body {
+            background-image: url('background.png');
+            background-repeat: no-repeat;
+            background-size: 100% 30%;
+        }
+
+        .account {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        input {
+            margin-left: 40%;
+            width: 30%;
+            border: 2px solid #133C55;
+            padding: 10px 10px;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        h3 {
+            margin-left: 40%;
+        }
+
+        .submit {
+            font-family: "Verdana";
+            color: #E0FBFC;
+            text-align: center;
+            background: #5DA271;
+            padding: 5px 10px;
+            font-size: 100%;
+            width:fit-content;
+            margin-left: 40%;
+        }
+
+    </style>
+    
+    <body>
+        <img src="CapstoneLogo.png" style="width:250px;height:250px">
+        <button class= "home" onclick="document.location='index.html'"><b>Home</b></button>
+        <button class= "about" onclick="document.location='about.html'"><b>About</b></button>
+        <button class= "account" onclick="document.location='account.html'"><b>Account</b></button>
+        <br>
+        <br>
+        <h1>Create Your Account</h1>
+        <br>
+        <form>
+            <label for="fname"><h3>First Name</h3></label>
+            <input type="text" id="fname" name="fname">
+            <br>
+            <label for="lname"><h3>Last Name</h3></label>
+            <input type="text" id="lname" name="lname">
+            <br>
+            <label for="email"><h3>Email</h3></label>
+            <input type="text" id="email" name="email">
+            <br>
+            <label for="username"><h3>Username</h3></label>
+            <input type="text" id="username" name="username">
+            <br>
+            <label for="password"><h3>Password</h3></label>
+            <input type="text" id="password" name="password">
+            <br>
+            <br>
+            <button class = "submit"><b>Submit</b></button>
+        </form>
+        <br>
+        <br>
+        <br>
+
+    </body>
+    <script>
+        
+    </script>
+</html>
