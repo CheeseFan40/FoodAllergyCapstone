@@ -58,20 +58,14 @@ Accounts.createCollection().then(function (collection){
 
 //Sets empty array
 const usrs = []
-let id = ''
-let email = ''
-let password = ''
-let name = ''
 
 //Creates and authenticates password
 const createPassport = require('./passportConfig');//exported as initialized
 
 createPassport(
     passport,
-    email => user => user.email === email,
-    id => user => user.id === id,
-    password => user => user.password === password
-    
+    email => usrs.find(user => user.email === email),
+    id => usrs.find(user => user.id === id)
 )//initialized function that is initialize(passport, getUserByEmail, getUserById)
 
 
@@ -130,20 +124,36 @@ app.get('/account-sign-up', checkNotAuthenticated , (req, res) => {
 app.post('/account-sign-up', checkNotAuthenticated, async (req, res) => {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 8)
-        id = Date.now().toString()
-        name = req.body.name
-        email = req.body.email
-        password = hashedPassword
-        let exists = await Accounts.exists({Email: email})
-
-        if(!exists){
-            Accounts.insertMany({ID: id, Email: email, HashedPassword: password, UserName: name })
-            
-            
-            //Accounts.insertMany({HashedPassword: password})
-        }else{
-            console.log("already exists")
+        usrs.push({
+            id: Date.now().toString(),
+            name: req.body.name,
+            email: req.body.email,
+            password: hashedPassword
+        })
+        
+        console.log(usrs)
+        
+        const maper = usrs.map(x => x.email)
+        const maper2 = usrs.map(x => x.id)
+        const maper3 = usrs.map(x => x.name)
+        const maper4 = usrs.map(x => x.password)
+        let exists=''
+        for (let i = 0; i< maper.length; i++){
+            console.log(maper[i])
+            exists = await Accounts.exists({Email: maper[i]})
+            if(!exists){
+                Accounts.insertMany({ID: maper2[i], Email: maper[i], HashedPassword: maper4[i], UserName: maper3[i] })
+             
+                //Accounts.insertMany({HashedPassword: password})
+            }else{
+                
+                console.log("already exists")
+    
+                
+            }
         }
+
+        
         
 
         res.redirect('/account-log-in')
@@ -198,80 +208,84 @@ app.listen(port, () => console.log(`Running on port ${port}`))
 app.get('/owner', (req, res) => res.render("owner.ejs"))
 app.post('/owner', async function (req, res) {
     try{    
-    
-    var test = req.body.RestaurantNamer    
-    var test1 = req.body.Milk  
-    var test2 = req.body.Soy
-    var test3 = req.body.Peanuts
-    var test4 = req.body.Wheat
-    var test5 = req.body.Eggs
-    var test6 = req.body.Treenut
-    var test7 = req.body.Shellfish
-    var test8 = req.body.Sesame
-    var test9 = req.body.Fish
-
-    let exists = await User.exists({RestaurantName: test})
+        const restarray = {
+            test: req.body.RestaurantNamer,
+            test1:  req.body.Milk,
+            test2 : req.body.Soy,
+            test3 :req.body.Peanuts,
+            test4: req.body.Wheat,
+            test5 :req.body.Eggs,
+            test6 :req.body.Treenut,
+            test7 : req.body.Shellfis,
+            test8 : req.body.Sesame,
+            test9 : req.body.Fish
+        }
+          
+   
+        
+    let exists = await User.exists({RestaurantName: restarray.test})
     console.log(exists)
 
     if(!exists){
         console.log("not exist")
-        User.insertMany({RestaurantName: test})
+        User.insertMany({RestaurantName: restarray.test})
     }else{
         console.log("exists")
     }
 
-    if(test1 != ""){
+    if(restarray.test1 != ""){
 
-        await User.updateMany({RestaurantName:test},{ $push: {Milk:test1}}).then(function(){
-             console.log(`successfully added ${test1}`)
+        await User.updateMany({RestaurantName:restarray.test},{ $push: {Milk:restarray.test1}}).then(function(){
+             console.log(`successfully added ${restarray.test1}`)
+             console.log(restarray.test1)
     })
     }
-    if(test2 != ""){
+    if(restarray.test2 != ""){
 
-        await User.updateMany({RestaurantName:test},{ $push: {Soy:test2}}).then(function(){
-            console.log(`successfully added ${test2}`)
+        await User.updateMany({RestaurantName:restarray.test},{ $push: {Soy:restarray.test2}}).then(function(){
+            console.log(`successfully added ${restarray.test2}`)
     })
     }
     if(test3 != ""){
 
-        await User.updateMany({RestaurantName:test},{ $push: {Peanuts:test3}}).then(function(){
-            console.log(`successfully added ${test3}`)
+        await User.updateMany({RestaurantName:restarray.test},{ $push: {Peanuts:restarray.test3}}).then(function(){
+            console.log(`successfully added ${restarray.test3}`)
     })
     }
     if(test4 != ""){
 
-        await User.updateMany({RestaurantName:test},{ $push: {Wheat:test4}}).then(function(){
-            console.log(`successfully added ${test4}`)
+        await User.updateMany({RestaurantName:restarray.test},{ $push: {Wheat:restarray.test4}}).then(function(){
+            console.log(`successfully added ${restarray.test4}`)
     })
     }
     if(test5 != ""){
 
-        await User.updateMany({RestaurantName:test},{ $push: {Eggs:test5}}).then(function(){
-            console.log(`successfully added ${test5}`)
+        await User.updateMany({RestaurantName:restarray.test},{ $push: {Eggs:restarray.test5}}).then(function(){
+            console.log(`successfully added ${restarray.test5}`)
     })
     }
     if(test6 != ""){
 
-        await User.updateMany({RestaurantName:test},{ $push: {Treenut:test6}}).then(function(){
-            console.log(`successfully added ${test6}`)
+        await User.updateMany({RestaurantName:restarray.test},{ $push: {Treenut:restarray.test6}}).then(function(){
+            console.log(`successfully added ${restarray.test6}`)
     })
     }
     if(test7 != ""){
 
-        await User.updateMany({RestaurantName:test},{ $push: {Shellfish:test7}}).then(function(){
-            console.log(`successfully added ${test7}`)
+        await User.updateMany({RestaurantName:restarray.test},{ $push: {Shellfish:restarray.test7}}).then(function(){
+            console.log(`successfully added ${restarray.test7}`)
     })
     }
     if(test8 != ""){
 
-        await User.updateMany({RestaurantName:test},{ $push: {Sesame:test8}}).then(function(){
-            console.log(`successfully added ${test8}`)
+        await User.updateMany({RestaurantName:restarray.test},{ $push: {Sesame:restarray.test8}}).then(function(){
+            console.log(`successfully added ${restarray.test8}`)
     })
     }
     if(test9 != ""){
 
-        await User.updateMany({RestaurantName:test},{ $push: {Fish:test9}}).then(function(){
-            console.log(`successfully added ${test9}`)
+        await User.updateMany({RestaurantName:restarray.test},{ $push: {Fish:restarray.test9}}).then(function(){
+            console.log(`successfully added ${restarray.test9}`)
     })
     }
 
