@@ -1,69 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel ="stylesheet" href ="CSS/test.css">
-        
-        <title>Alex Marconescu</title>
-        
-        </div>
+        <link rel="stylesheet" href="CSS/style.css">
+        <title>Account</title>
     </head>
+    <style>
+        body {
+            background-image: url('background.png');
+            background-repeat: no-repeat;
+            background-size: 100% 28%;
+        }
+
+        .account {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        input {
+            margin-left: 10%;
+            width: fit-content;
+            border: 2px solid #133C55;
+            padding: 10px 10px;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .submit {
+            margin-left: 20%;
+        }
+
+        select {
+            font-family: "Verdana";
+            color: #E0FBFC;
+            text-align: center;
+            background: #5DA271;
+            padding: 5px 10px;
+            font-size: 100%;
+            width:fit-content;
+            margin-left: 20%;
+        }
+
+        h2 {
+            color:#133C55;
+        }
+    </style>
+
     <body>
-        <h1 class="register">Login Page</h1>
-
-        <form class="former" action="/owner" method ="POST">
-            <div class="">
-                <label for="RestaurantNamer" >Restaurant Name?</label>
-                <input type="text" id="" name="RestaurantNamer" >
-            </div>
-            <div class="">
-                <label for="Milk">Milk</label>
-                <input type="text" id="" name="Milk" >
-            </div>
-            <div class="">
-                <label for="Soy" >Soy</label>
-                <input type="text" id="" name="Soy" >
-            </div>
-            <div class="">
-                <label for="Peanuts">Peanuts</label>
-                <input type="text" id="" name="Peanuts" >
-            </div>
-            <div class="">
-                <label for="Wheat" >Wheat</label>
-                <input type="text" id="" name="Wheat" >
-            </div>
-            <div class="">
-                <label for="Eggs">Eggs</label>
-                <input type="text" id="" name="Eggs" >
-            </div>
-            <div class="">
-                <label for="Treenut" >Treenut</label>
-                <input type="text" id="" name="Treenut" >
-            </div>
-            <div class="">
-                <label for="Shellfish">Shellfish</label>
-                <input type="text" id="" name="Shellfish" >
-            </div>
-            <div class="">
-                <label for="Sesame" >Sesame</label>
-                <input type="text" id="" name="Sesame" >
-            </div>
-            <div class="">
-                <label for="Fish">Fish</label>
-                <input type="text" id="" name="Fish" >
-            </div>
-            <section class="submit">
-                <button type="submit"> Submit</button>
-            </section>
-            <div class="stringer" id="stringer">
-                
-            </div>
-            <div class="end">
-            
-            </div>
-        </form>
+        <img src="CapstoneLogo.png" style="width:250px;height:250px">
+        <button class= "home" onclick="document.location='index.html'"><b>Home</b></button>
+        <button class= "about" onclick="document.location='about.html'"><b>About</b></button>
+        <button class= "account" onclick="document.location='account.html'"><b>Account</b></button>
+        <br>
+        <br>
+        <h1>Welcome ~username~!</h1>
+        <h2>Thank you for participating and helping ease the dining experience.</h2>
+        <h2>Please add one menu item at a time that contains the allergens, with the last being any item without any of the listed allergens above.</h2>
+        <br>
+        <div style="margin-left: 20%">
+            <table>
+                <form class="former" action="/owner" method ="POST">
+                    
+                <tr>
+                    <th style="width:300px"></th>
+                    <th style="width:500px"></th>
+                </tr>
+                <tr>
+                    <td><label for="rname"><h3>Restaurant Name</h3></label></td>
+                    <td><input type="text" id="rname" name="RestaurantNamer"></td>
+                </tr>
+                <tr>
+                    <td><label for="rMilk"><h3>Milk</h3></label></td>
+                    <td><input type="text" id="rMilk" name="Milk"></td>
+                </tr>
+                <tr>
+                    <td><label for="rEggs"><h3>Eggs</h3></label></td>
+                    <td><input type="text" id="rEggs" name="Eggs"></td>
+                </tr>
+                <tr>
+                    <td><label for="rPeanuts"><h3>Peanuts</h3></label></td>
+                    <td><input type="text" id="rPeanuts" name="Peanuts"></td>
+                </tr>
+                <tr>
+                    <td><label for="rTree Nuts"><h3>Tree Nuts</h3></label></td>
+                    <td><input type="text" id="rTree Nuts" name="Treenut"></td>
+                </tr>
+                <tr>
+                    <td><label for="rFish"><h3>Fish</h3></label></td>
+                    <td><input type="text" id="rFish" name="Fish"></td>
+                </tr>
+                <tr>
+                    <td><label for="rCrustaceans"><h3>Crustaceans</h3></label></td>
+                    <td><input type="text" id="rCrustaceans" name="Shellfish"></td>
+                </tr>
+                <tr>
+                    <td><label for="rWheat"><h3>Wheat</h3></label></td>
+                    <td><input type="text" id="rWheat" name="Wheat"></td>
+                </tr>
+                <tr>
+                    <td><label for="rSoy"><h3>Soy</h3></label></td>
+                    <td><input type="text" id="rSoy" name="Soy"></td>
+                </tr>
+                <tr>
+                    <td><label for="rSesame"><h3>Sesame</h3></label></td>
+                    <td><input type="text" id="rSesame" name="Sesame"></td>
+                </tr>
+                <tr>
+                    <td><label for="rNA"><h3>None Above</h3></label></td>
+                    <td><input type="text" id="rNA" name=""></td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                    <td><button class = "submit">Submit</button></td>
+                </tr>
+            </table>
+            </form>
+        </div>
     </body>
-
 </html>
