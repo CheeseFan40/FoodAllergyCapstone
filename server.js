@@ -31,7 +31,7 @@ mongoose.connect("mongodb+srv://MitchZ:T2GRPvC0AkjRuDL8@cluster0.edbmsue.mongodb
   
 // Defining User schema
 const userSchema = new Schema(
-    {RestaurantName: String, Milk: Array, Peanuts: Array, Soy: Array, Wheat: Array, Eggs: Array, Treetnut: Array, Shellfish: Array, Sesame: Array, Fish: Array }
+    {RestaurantName: String, Milk: Array, Peanuts: Array, Soy: Array, Wheat: Array, Eggs: Array, Treenut: Array, Shellfish: Array, Sesame: Array, Fish: Array }
 )
 
   
@@ -208,84 +208,84 @@ app.listen(port, () => console.log(`Running on port ${port}`))
 app.get('/owner', (req, res) => res.render("owner.ejs"))
 app.post('/owner', async function (req, res) {
     try{    
-        const restarray = {
-            test: req.body.RestaurantNamer,
-            test1:  req.body.Milk,
-            test2 : req.body.Soy,
-            test3 :req.body.Peanuts,
-            test4: req.body.Wheat,
-            test5 :req.body.Eggs,
-            test6 :req.body.Treenut,
-            test7 : req.body.Shellfis,
-            test8 : req.body.Sesame,
-            test9 : req.body.Fish
-        }
-          
-   
+       
+        var test= req.body.RestaurantNamer
+        var test1=  req.body.Milk
+        var test2= req.body.Soy
+        var test3= req.body.Peanuts
+        var test4= req.body.Wheat
+        var test5= req.body.Eggs
+        var test6= req.body.Treenut
+        var test7= req.body.Shellfish
+        var test8= req.body.Sesame
+        var test9= req.body.Fish
         
-    let exists = await User.exists({RestaurantName: restarray.test})
+      
+    
+
+    let exists = await User.exists({RestaurantName: test})
     console.log(exists)
 
     if(!exists){
         console.log("not exist")
-        User.insertMany({RestaurantName: restarray.test})
+        User.insertMany({RestaurantName: test})
     }else{
         console.log("exists")
     }
 
-    if(restarray.test1 != ""){
+    if(test1 != ""){
 
-        await User.updateMany({RestaurantName:restarray.test},{ $push: {Milk:restarray.test1}}).then(function(){
-             console.log(`successfully added ${restarray.test1}`)
-             console.log(restarray.test1)
+        await User.updateMany({RestaurantName:test},{ $push: {Milk:test1}}).then(function(){
+             console.log(`successfully added ${test1}`)
+             console.log(test1)
     })
     }
-    if(restarray.test2 != ""){
+    if(test2 != ""){
 
-        await User.updateMany({RestaurantName:restarray.test},{ $push: {Soy:restarray.test2}}).then(function(){
-            console.log(`successfully added ${restarray.test2}`)
+        await User.updateMany({RestaurantName:test},{ $push: {Soy:test2}}).then(function(){
+            console.log(`successfully added ${test2}`)
     })
     }
     if(test3 != ""){
 
-        await User.updateMany({RestaurantName:restarray.test},{ $push: {Peanuts:restarray.test3}}).then(function(){
-            console.log(`successfully added ${restarray.test3}`)
+        await User.updateMany({RestaurantName:test},{ $push: {Peanuts:test3}}).then(function(){
+            console.log(`successfully added ${test3}`)
     })
     }
     if(test4 != ""){
 
-        await User.updateMany({RestaurantName:restarray.test},{ $push: {Wheat:restarray.test4}}).then(function(){
-            console.log(`successfully added ${restarray.test4}`)
+        await User.updateMany({RestaurantName:test},{ $push: {Wheat:test4}}).then(function(){
+            console.log(`successfully added ${test4}`)
     })
     }
     if(test5 != ""){
 
-        await User.updateMany({RestaurantName:restarray.test},{ $push: {Eggs:restarray.test5}}).then(function(){
-            console.log(`successfully added ${restarray.test5}`)
+        await User.updateMany({RestaurantName:test},{ $push: {Eggs:test5}}).then(function(){
+            console.log(`successfully added ${test5}`)
     })
     }
     if(test6 != ""){
 
-        await User.updateMany({RestaurantName:restarray.test},{ $push: {Treenut:restarray.test6}}).then(function(){
-            console.log(`successfully added ${restarray.test6}`)
+        await User.updateMany({RestaurantName:test},{ $push: {Treenut:test6}}).then(function(){
+            console.log(`successfully added ${test6}`)
     })
     }
     if(test7 != ""){
 
-        await User.updateMany({RestaurantName:restarray.test},{ $push: {Shellfish:restarray.test7}}).then(function(){
-            console.log(`successfully added ${restarray.test7}`)
+        await User.updateMany({RestaurantName:test},{ $push: {Shellfish:test7}}).then(function(){
+            console.log(`successfully added ${test7}`)
     })
     }
     if(test8 != ""){
 
-        await User.updateMany({RestaurantName:restarray.test},{ $push: {Sesame:restarray.test8}}).then(function(){
-            console.log(`successfully added ${restarray.test8}`)
+        await User.updateMany({RestaurantName:test},{ $push: {Sesame:test8}}).then(function(){
+            console.log(`successfully added ${test8}`)
     })
     }
     if(test9 != ""){
 
-        await User.updateMany({RestaurantName:restarray.test},{ $push: {Fish:restarray.test9}}).then(function(){
-            console.log(`successfully added ${restarray.test9}`)
+        await User.updateMany({RestaurantName:test},{ $push: {Fish:test9}}).then(function(){
+            console.log(`successfully added ${test9}`)
     })
     }
 
@@ -294,7 +294,5 @@ app.post('/owner', async function (req, res) {
     res.redirect('/owner')
     
     }
-    
-    
     
 });
