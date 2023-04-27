@@ -17,7 +17,7 @@ mongoose.connect('mongodb://localhost/myapp', { useNewUrlParser: true, useUnifie
     console.log('MongoDB Connection Established!');
     
     app.listen(port, () => {
-      console.log(`App is listening on port ${3000}`);
+      console.log(`App is listening on port ${port}`);
     });
   })
   .catch(err => console.error(err));
