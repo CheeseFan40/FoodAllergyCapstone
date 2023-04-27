@@ -22,7 +22,7 @@ mongoose.connect('mongodb://localhost/myapp', { useNewUrlParser: true, useUnifie
   })
   .catch(err => console.error(err));
 
-const port = 3000
+const port = 8080
 const Schema = mongoose.Schema;
 
 
