@@ -5,7 +5,8 @@ if (process.env.NODE_ENV !=='production'){
 // Required Modules
 const mongoose = require('mongoose');
 const express = require('express')
-
+const http = require('http')
+http
 
 
 const app = express()
@@ -13,6 +14,7 @@ app.get('/health', (req, res) => {
     res.status(200).send('Healthy');
 });
 const port = 8080
+const hostname = "0.0.0.0"
 const Schema = mongoose.Schema;
 
 
@@ -197,7 +199,7 @@ app.use(express.static('public'))
 app.use('/css', express.static(__dirname + 'public/CSS'))
 app.use('/js', express.static(__dirname + 'public/JS'))
 
-app.listen(port, () => console.log(`Running on port ${port}`))
+app.listen(port, hostname, () => console.log(`Running on port ${port} and on host ${hostname}`))
 
 
 
