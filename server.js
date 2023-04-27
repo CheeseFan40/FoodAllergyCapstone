@@ -6,11 +6,12 @@ if (process.env.NODE_ENV !=='production'){
 const mongoose = require('mongoose');
 const express = require('express')
 
+
+
+const app = express()
 app.get('/health', (req, res) => {
     res.status(200).send('Healthy');
 });
-
-const app = express()
 const port = 8080
 const Schema = mongoose.Schema;
 
