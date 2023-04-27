@@ -12,6 +12,16 @@ app.get('/health', (req, res) => {
   res.status(200).send('Healthy');
 });
 
+mongoose.connect('mongodb://localhost/myapp', { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('MongoDB Connection Established!');
+    
+    app.listen(port, () => {
+      console.log(`App is listening on port ${3000}`);
+    });
+  })
+  .catch(err => console.error(err));
+
 const port = 3000
 const Schema = mongoose.Schema;
 
