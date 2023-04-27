@@ -5,9 +5,13 @@ if (process.env.NODE_ENV !=='production'){
 // Required Modules
 const prompt=require("prompt-sync")({sigint:true});
 const mongoose = require('mongoose');
-const express = require('express')
+const express = require('express');
+const app = express();
 
-const app = express()
+app.get('/health', (req, res) => {
+  res.status(200).send('Healthy');
+});
+
 const port = 3000
 const Schema = mongoose.Schema;
 
