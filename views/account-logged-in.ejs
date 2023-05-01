@@ -298,18 +298,24 @@
             });
         }
         
-        var milk = true;
         function setPreferenceMilk()
         {
-           if (document.querySelector(".milk").style.background = "#5DA271") {
+            var milk = true;
+
+            if(milk == true){
+                console.log("Setting new color");
                 document.querySelector(".milk").style.background = "#EE6C4D";
                 milk = false;
-           }
-           else if(document.querySelector(".milk").style.background = "#EE6C4D") {
-                 document.querySelector(".milk").style.background = "#5DA271";
-                milk = true;
+                console.log("Milk is False");
+                return milk;
             }
-           
+            if(milk == false){
+                console.log("Setting new color");
+                document.querySelector(".milk").style.background = "#5DA271";
+                milk = true;
+                console.log("Milk is True");
+                return milk;
+            }
         } 
 
         var eggs = true;

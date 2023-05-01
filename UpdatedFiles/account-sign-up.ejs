@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="CSS/style.css">
+        <title>Account</title>
+    </head>
+    <style>
+        .account {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        h3 {
+            margin-left: 40%;
+        }
+
+        .submit {
+            margin-left: 40%;
+        }
+    </style>
+    
+    <body>
+        <img src="CapstoneLogo.png" style="width:250px;height:250px">
+        <button class= "home" onclick="document.location='index'"><b>Home</b></button>
+        <button class= "about" onclick="document.location='about'"><b>About</b></button>
+        <button class= "account" onclick="document.location='account-signed-in'"><b>Account</b></button>
+        <br>
+        <br>
+        <h1>Create Your Account</h1>
+        <br>
+<form action="/account-sign-up" method="POST">
+    <div>
+        <label for="name">User</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" required>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="text" id="password" name="password" required>
+    </div>
+    <section>
+        <button type="submit">Submit</button>
+    </section>
+    <a href="/account-log-in">Login</a>
+</form>
+        <br>
+        <br>
+        <br>
+
+    </body>
+    <script>
+        
+    </script>
+</html>
