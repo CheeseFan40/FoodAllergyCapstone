@@ -191,9 +191,14 @@ function checkNotAuthenticated(req, res, next) {
 app.use(express.static('public'))
 app.use('/css', express.static(__dirname + 'public/CSS'))
 app.use('/js', express.static(__dirname + 'public/JS'))
+app.use('/images', express.static(__dirname + 'public/Images'))
 
 app.listen(port, () => console.log(`Running on port ${port}`))
 
+
+app.get('/restaurant-admin', (req, res) => {
+    res.render('restaurant-admin.ejs')
+})
 
 
 // ********** RESTAURANT INPUT **********
