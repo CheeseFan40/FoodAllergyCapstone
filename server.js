@@ -29,10 +29,6 @@ mongoose.connect("mongodb+srv://MitchZ:T2GRPvC0AkjRuDL8@cluster0.edbmsue.mongodb
     console.log(err)
 });
 
- app.get('/health', (req, res) => {
-     res.render('health.ejs')
-});
-
 
 
   
@@ -96,6 +92,11 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(methodOverride('_method'))
+
+
+app.get('/health', (req, res) => {
+     res.render('health.ejs')
+});
 
 
 // Checks the name with what is visible
