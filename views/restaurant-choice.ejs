@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="CSS/style.css">
+        <title>Account</title>
+    </head>
+    <style>
+        body {
+            background-image: url('Images/background.png');
+            background-repeat: no-repeat;
+            background-size: 100% 28%;
+        }
+
+        .account {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        input {
+            margin-left: 10%;
+            width: fit-content;
+            border: 2px solid #133C55;
+            padding: 10px 10px;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .submit {
+            margin-left: 20%;
+        }
+
+        select {
+            font-family: "Verdana";
+            color: #E0FBFC;
+            text-align: center;
+            background: #5DA271;
+            padding: 5px 10px;
+            font-size: 100%;
+            width:fit-content;
+            margin-left: 20%;
+        }
+
+        h2 {
+            color:#133C55;
+        }
+    </style>
+
+    <body>
+        <img src="Images/CapstoneLogo.png" style="width:250px;height:250px">
+        <button class= "home" onclick="document.location='index.html'"><b>Home</b></button>
+        <button class= "about" onclick="document.location='about.html'"><b>About</b></button>
+        <button class= "account" onclick="document.location='account.html'"><b>Account</b></button>
+        <br>
+        <br>
+        <h1>Welcome</h1>
+        <h2>Thank you for participating and helping ease the dining experience.</h2>
+        <h2>Please enter the restaurant name to look for menu items</h2>
+        <br>
+        <div style="margin-left: 20%">
+            <table>
+                <form class="former" action="/restaurant" method ="POST">
+                    
+                <tr>
+                    <th style="width:300px"></th>
+                    <th style="width:500px"></th>
+                </tr>
+                <tr>
+                    <td><label for="rname"><h3>Restaurant Name</h3></label></td>
+                    <td><input type="text" id="rname" name="RestaurantChoice"></td>
+                </tr>
+                
+                    <td><button class = "submit">Submit</button></td>
+                </tr>
+            </table>
+            </form>
+        </div>
+    </body>
+</html>
