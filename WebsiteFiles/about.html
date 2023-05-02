@@ -4,23 +4,101 @@
         <title>About</title>
     </head>
     <style>
-        body {
-            background-image: url('background.png');
-            background-repeat: no-repeat;
-            background-size: 100% 31%;
+
+
+body::after {
+        /* content: "";
+        background: url("dining.jpg");
+        opacity: 0.9;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        z-index: -1;    */
+        
+}
+        .navbar{
+            background-color: rgb(41, 50, 65);
+            top: 0%;
+            left: 0;
+            width: 100%;
+            position: absolute;
+            display: flex;
+
         }
 
-        .about {
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        .logo{
+            padding-left: 5px;
+
         }
+
+        .input{
+            padding-top: 200px;
+            text-align: center;
+            border: 2px #5DA271;
+            float: left;
+            width: 50%;
+            border-left: 10px blue;
+            /* border: 2px solid #133C55; */
+            /* border-radius: 10px; */
+            /* box-sizing: border-box; */
+        }
+        
+
+
+        .buttons {
+            font-family: "Verdana";
+            color: #E0FBFC;
+            text-align: center;
+            background: #5DA271;
+            font-size: 100%;
+            width: fit-content;
+            padding: 15px 28px;
+            
+        }
+
+
+        .input input{
+            height: 42px;
+            width: 470px;
+            
+        }
+        
+        .bars{
+            padding-top: 100px;
+            
+        }
+
+        .buttonRow{
+            
+            padding-top: 2%;
+            margin: 0;
+            position: relative;
+            top: 50%;
+            white-space: nowrap;
+            overflow: hidden;
+            padding-left: 69%;
+            padding-top: 40px;
+            
+            
+        }
+
+
     </style>
     
     <body>
-        <img src="CapstoneLogo.png" style="width:250px;height:250px">
-        <button class= "home" onclick="document.location='index.html'"><b>Home</b></button>
-        <button class= "about" onclick="document.location='about.html'"><b>About</b></button>
-        <button class= "account" onclick="document.location='account.html'"><b>Account</b></button>
-        <br>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <img class="logo" src="CapstoneLogo.png" style="width:125px;height:125px">
+            <div class = "buttonRow">
+                <button class="buttons" onclick="document.location='index.html'"><b>Home</b></button>
+                <button class= "buttons" onclick="document.location='about.html'"><b>About</b></button>
+                <button class= "buttons" onclick="document.location='account.html'"><b>Account</b></button>
+            </div>
+        </nav>
+
         <br>
         <h1>Welcome to Meal-Mates</h1>
         <br>
