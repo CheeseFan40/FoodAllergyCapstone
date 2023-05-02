@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const express = require('express')
 
 const app = express()
-const port = 3000
+const port = 8080
 const Schema = mongoose.Schema;
 
 
@@ -28,6 +28,11 @@ mongoose.connect("mongodb+srv://MitchZ:T2GRPvC0AkjRuDL8@cluster0.edbmsue.mongodb
 }).catch((err) => {
     console.log(err)
 });
+
+app.get('/health', (req, res) => {
+  res.status(200).send('Healthy');
+});
+
   
 // Defining User schema
 const userSchema = new Schema(
