@@ -93,7 +93,7 @@ app.use(methodOverride('_method'))
 
 // Checks the name with what is visible
 app.get('/', (req, res) => { 
-    res.render('about.ejs')
+    res.render('home.ejs')
 })
 
 app.get('/restaurant', (req, res) => { 

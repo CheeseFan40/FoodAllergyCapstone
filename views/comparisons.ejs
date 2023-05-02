@@ -57,53 +57,256 @@
         <h1 class="register">User Profile Test Functionality</h1>
 
         <form class="former" action="/comparisons" method ="POST">
-            
-            <div class="comparisons">
-                <label for="Milk">Milk</label>
-                <input type="text" id="" name="Milk" >
+            <br>
+            <br>
+            <h1>Hello <%=testname%>!</h1>
+            <br>
+            <hr>
+            <button type="button" class="collapsible">Set Allergens</button>
+            <div class="content">
+                <br>
+                <div style="margin-left: 10%">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class= "milk" onclick="setPreferenceMilk()"></button>
+                            </td>
+                            <td>
+                                <h3>Milk</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class= "eggs" onclick="setPreferenceEggs()"></button>
+                            </td>
+                            <td>
+                                <h3>Eggs</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class= "peanuts" onclick="setPreferencePeanuts()"></button>
+                            </td>
+                            <td>
+                                <h3>Peanuts</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class= "treenuts" onclick="setPreferenceTreeNuts()"></button>
+                            </td>
+                            <td>
+                                <h3>Tree Nuts</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class= "fish" onclick="setPreferenceFish()"></button>
+                            </td>
+                            <td>
+                                <h3>Fish</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class= "crustaceans" onclick="setPreferenceCrustaceans()"></button>
+                            </td>
+                            <td>
+                                <h3>Crustaceans</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class= "wheat" onclick="setPreferenceWheat()"></button>
+                            </td>
+                            <td>
+                                <h3>Wheat</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class= "soy" onclick="setPreferenceSoy()"></button>
+                            </td>
+                            <td>
+                                <h3>Soy</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class= "sesame" onclick="setPreferenceSesame()"></button>
+                            </td>
+                            <td>
+                                <h3>Sesame</h3>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <button class = "apply"><b>Apply</b></button>
             </div>
-            <div class="comparisons">
-                <label for="Soy" >Soy</label>
-                <input type="text" id="" name="Soy" >
+            <br>
+            <hr>
+            <div>
+                <button class="apply" onclick="resetUsername()"><b>Reset Username</b></button>
             </div>
-            <div class="comparisons">
-                <label for="Peanuts">Peanuts</label>
-                <input type="text" id="" name="Peanuts" >
+            <br>
+            </body>
+            <div>
+                <button class="apply" onclick="resetPassword()"><b>Reset Password</b></button>
             </div>
-            <div class="comparisons">
-                <label for="Wheat" >Wheat</label>
-                <input type="text" id="" name="Wheat" >
-            </div>
-            <div class="comparisons">
-                <label for="Eggs">Eggs</label>
-                <input type="text" id="" name="Eggs" >
-            </div>
-            <div class="comparisons">
-                <label for="Treenut" >Treenut</label>
-                <input type="text" id="" name="Treenut" >
-            </div>
-            <div class="comparisons">
-                <label for="Shellfish">Shellfish</label>
-                <input type="text" id="" name="Shellfish" >
-            </div>
-            <div class="comparisons">
-                <label for="Sesame" >Sesame</label>
-                <input type="text" id="" name="Sesame" >
-            </div>
-            <div class="comparisons">
-                <label for="Fish">Fish</label>
-                <input type="text" id="" name="Fish" >
-            </div>
-
-                <button class="submit">Submit</button>
-
-            <div class="stringer" id="stringer">
-                
-            </div>
-            <div class="end">
-            
-            </div>
+            <br>
+            <hr>
         </form>
     </body>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
 
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                 if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+        
+        function setPreferenceMilk()
+        {
+            var milk = true;
+
+            if(milk == true){
+                console.log("Setting new color");
+                document.querySelector(".milk").style.background = "#EE6C4D";
+                milk = false;
+                console.log("Milk is False");
+                return milk;
+            }
+            if(milk == false){
+                console.log("Setting new color");
+                document.querySelector(".milk").style.background = "#5DA271";
+                milk = true;
+                console.log("Milk is True");
+                return milk;
+            }
+        } 
+
+        var eggs = true;
+        function setPreferenceEggs()
+        {
+           if (document.querySelector(".eggs").style.background = "#5DA271") {
+                document.querySelector(".eggs").style.background = "#EE6C4D";
+                eggs = false;
+           }
+           else if(document.querySelector(".eggs").style.background = "#EE6C4D") {
+                 document.querySelector(".eggs").style.background = "#5DA271";
+                 eggs = true;
+            }
+           
+        } 
+
+        var peanuts = true;
+        function setPreferencePeanuts()
+        {
+           if (document.querySelector(".peanuts").style.background = "#5DA271") {
+                document.querySelector(".peanuts").style.background = "#EE6C4D";
+                peanuts = false;
+           }
+           else if(document.querySelector(".peanuts").style.background = "#EE6C4D") {
+                 document.querySelector(".peanuts").style.background = "#5DA271";
+                 peanuts = true;
+            }
+           
+        } 
+
+        var treenuts = true;
+        function setPreferenceTreeNuts()
+        {
+           if (document.querySelector(".treenuts").style.background = "#5DA271") {
+                document.querySelector(".treenuts").style.background = "#EE6C4D";
+                treenuts = false;
+           }
+           else if(document.querySelector(".treenuts").style.background = "#EE6C4D") {
+                 document.querySelector(".treenuts").style.background = "#5DA271";
+                 treenuts = true;
+            }
+           
+        } 
+
+        var fish = true;
+        function setPreferenceFish()
+        {
+           if (document.querySelector(".fish").style.background = "#5DA271") {
+                document.querySelector(".fish").style.background = "#EE6C4D";
+                fish = false;
+           }
+           else if(document.querySelector(".fish").style.background = "#EE6C4D") {
+                 document.querySelector(".fish").style.background = "#5DA271";
+                 fish = true;
+            }
+           
+        } 
+
+        var crustaceans = true;
+        function setPreferenceCrustaceans()
+        {
+           if (document.querySelector(".crustaceans").style.background = "#5DA271") {
+                document.querySelector(".crustaceans").style.background = "#EE6C4D";
+                crustaceans = false;
+           }
+           else if(document.querySelector(".crustaceans").style.background = "#EE6C4D") {
+                 document.querySelector(".crustaceans").style.background = "#5DA271";
+                 crustaceans = true;
+            }
+           
+        } 
+
+        var wheat = true;
+        function setPreferenceWheat()
+        {
+           if (document.querySelector(".wheat").style.background = "#5DA271") {
+                document.querySelector(".wheat").style.background = "#EE6C4D";
+                wheat = false;
+           }
+           else if(document.querySelector(".wheat").style.background = "#EE6C4D") {
+                 document.querySelector(".wheat").style.background = "#5DA271";
+                 wheat = true;
+            }
+           
+        } 
+
+        var soy = true;
+        function setPreferenceSoy()
+        {
+           if (document.querySelector(".soy").style.background = "#5DA271") {
+                document.querySelector(".soy").style.background = "#EE6C4D";
+                soy = false;
+           }
+           else if(document.querySelector(".soy").style.background = "#EE6C4D") {
+                 document.querySelector(".soy").style.background = "#5DA271";
+                 soy = true;
+            }
+           
+        } 
+
+        var sesame = true;
+        function setPreferenceSesame()
+        {
+           if (document.querySelector(".sesame").style.background = "#5DA271") {
+                document.querySelector(".sesame").style.background = "#EE6C4D";
+                sesame = false;
+           }
+           else if(document.querySelector(".sesame").style.background = "#EE6C4D") {
+                 document.querySelector(".sesame").style.background = "#5DA271";
+                 sesame = true;
+            }
+           
+        } 
+    </script>
 </html>
