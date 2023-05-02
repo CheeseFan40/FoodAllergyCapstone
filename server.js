@@ -30,11 +30,11 @@ mongoose.connect("mongodb+srv://MitchZ:T2GRPvC0AkjRuDL8@cluster0.edbmsue.mongodb
 });
 
  app.get('/health', (req, res) => {
-  res.status(200).send('Healthy');
+  res.send('Healthy');
 });
 
 
- app.get('/', (req, res) => {
+ app.get('/account-log-in', (req, res) => {
   res.send('Hello');
 });
 
