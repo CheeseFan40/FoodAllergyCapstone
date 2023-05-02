@@ -133,7 +133,7 @@ app.post('/comparisons', async function (req, res) {
             test9 : req.body.Fish
         }
         //console.log(restarray)
-        milk = await User.find({RestaurantName:resturant}).distinct('Milk')
+        milk = await User.find({RestaurantName:restaurant}).distinct('Milk')
         soy = await User.find({RestaurantName:restaurant}).distinct('Soy')
         peanuts = await User.find({RestaurantName:restaurant}).distinct('Peanuts')
         wheat = await User.find({RestaurantName:restaurant}).distinct('Wheat')
