@@ -31,6 +31,7 @@ mongoose.connect("mongodb+srv://MitchZ:T2GRPvC0AkjRuDL8@cluster0.edbmsue.mongodb
 
  app.get('/health', (req, res) => {
   res.send('Healthy');
+     res.render('health.html')
 });
 
 
