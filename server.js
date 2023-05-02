@@ -33,6 +33,11 @@ mongoose.connect("mongodb+srv://MitchZ:T2GRPvC0AkjRuDL8@cluster0.edbmsue.mongodb
   res.status(200).send('Healthy');
 });
 
+
+ app.get('/', (req, res) => {
+  res.send('Hello');
+});
+
   
 // Defining User schema
 const userSchema = new Schema(
