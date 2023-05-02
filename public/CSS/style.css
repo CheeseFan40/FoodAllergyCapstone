@@ -78,3 +78,9 @@ hr {
     font-size: 100%;
     width:fit-content;
 }
+.comparisons {
+    font-family: "Verdana";
+    text-align: left;
+    color: #133C55;
+    margin-left: 50px;
+}

@@ -4,56 +4,99 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel ="stylesheet" href ="CSS/test.css">
+        <link rel ="stylesheet" href ="CSS/style.css">
         
-        <title>Alex Marconescu</title>
+        <title>Comparisons</title>
         
         </div>
     </head>
+    <style>
+        body {
+            background-image: url('Images/background.png');
+            background-repeat: no-repeat;
+            background-size: 100% 28%;
+        }
+
+        .account {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        input {
+            margin-left: 10%;
+            width: fit-content;
+            border: 2px solid #133C55;
+            padding: 10px 10px;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .submit {
+            margin-left: 20%;
+        }
+
+        select {
+            font-family: "Verdana";
+            color: #E0FBFC;
+            text-align: center;
+            background: #5DA271;
+            padding: 5px 10px;
+            font-size: 100%;
+            width:fit-content;
+            margin-left: 20%;
+        }
+
+        h2 {
+            color:#133C55;
+        }
+    </style>
     <body>
+        <img src="Images/CapstoneLogo.png" style="width:250px;height:250px">
+        <button class= "home" onclick="document.location='/'"><b>Home</b></button>
+        <button class= "account" onclick="document.location='account-log-in'"><b>Account</b></button>
+
         <h1 class="register">User Profile Test Functionality</h1>
 
         <form class="former" action="/comparisons" method ="POST">
             
-            <div class="">
+            <div class="comparisons">
                 <label for="Milk">Milk</label>
                 <input type="text" id="" name="Milk" >
             </div>
-            <div class="">
+            <div class="comparisons">
                 <label for="Soy" >Soy</label>
                 <input type="text" id="" name="Soy" >
             </div>
-            <div class="">
+            <div class="comparisons">
                 <label for="Peanuts">Peanuts</label>
                 <input type="text" id="" name="Peanuts" >
             </div>
-            <div class="">
+            <div class="comparisons">
                 <label for="Wheat" >Wheat</label>
                 <input type="text" id="" name="Wheat" >
             </div>
-            <div class="">
+            <div class="comparisons">
                 <label for="Eggs">Eggs</label>
                 <input type="text" id="" name="Eggs" >
             </div>
-            <div class="">
+            <div class="comparisons">
                 <label for="Treenut" >Treenut</label>
                 <input type="text" id="" name="Treenut" >
             </div>
-            <div class="">
+            <div class="comparisons">
                 <label for="Shellfish">Shellfish</label>
                 <input type="text" id="" name="Shellfish" >
             </div>
-            <div class="">
+            <div class="comparisons">
                 <label for="Sesame" >Sesame</label>
                 <input type="text" id="" name="Sesame" >
             </div>
-            <div class="">
+            <div class="comparisons">
                 <label for="Fish">Fish</label>
                 <input type="text" id="" name="Fish" >
             </div>
-            <section class="submit">
-                <button type="submit"> Submit</button>
-            </section>
+
+                <button class="submit">Submit</button>
+
             <div class="stringer" id="stringer">
                 
             </div>

@@ -92,8 +92,8 @@ app.use(methodOverride('_method'))
 
 
 // Checks the name with what is visible
-app.get('/', checkAuthenticated, (req, res) => { 
-    res.render('index.ejs', {name: req.user.name})
+app.get('/', (req, res) => { 
+    res.render('about.ejs')
 })
 
 app.get('/restaurant', (req, res) => { 
