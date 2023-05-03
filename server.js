@@ -8,6 +8,7 @@ const express = require('express')
 
 const app = express()
 const port = 8080
+const host = "0.0.0.0"
 const Schema = mongoose.Schema;
 
 console.log("yo")
@@ -16,6 +17,10 @@ const passport = require('passport')
 const flash = require('express-flash')
 const session = require('express-session')
 const methodOverride = require('method-override')
+
+app.get('/health', (req, res) => {
+  res.status(200).send('Healthy');
+});
 
 
 // Sets up the Database Connection
@@ -286,7 +291,7 @@ app.use('/css', express.static(__dirname + 'public/CSS'))
 app.use('/js', express.static(__dirname + 'public/JS'))
 app.use('/images', express.static(__dirname + 'public/Images'))
 
-app.listen(port, () => console.log(`Running on port ${port}`))
+app.listen(port, host () => console.log(`Running on port ${port}`))
 
 
 app.get('/restaurant-admin', (req, res) => {
