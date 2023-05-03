@@ -291,7 +291,7 @@ app.use('/css', express.static(__dirname + 'public/CSS'))
 app.use('/js', express.static(__dirname + 'public/JS'))
 app.use('/images', express.static(__dirname + 'public/Images'))
 
-app.listen(port, host () => console.log(`Running on port ${port}`))
+app.listen(port, host, () => console.log(`Running on port ${port}`))
 
 
 app.get('/restaurant-admin', (req, res) => {
