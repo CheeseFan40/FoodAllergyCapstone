@@ -24,7 +24,7 @@ app.get('/health', (req, res) => {
 
 
 // Sets up the Database Connection
-mongoose.connect("mongodb+srv://MitchZ:T2GRPvC0AkjRuDL8@cluster0.edbmsue.mongodb.net/?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://MitchZ:T2GRPvC0AkjRuDL8@cluster0.edbmsue.mongodb.net/RestaurantHere?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then((result) => {
@@ -41,7 +41,7 @@ const userSchema = new Schema(
 
   
 // Defining User model
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('Allergens', userSchema, 'Allergens');
   
 
 // Create collection of Model
