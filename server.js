@@ -11,7 +11,7 @@ const port = 8080
 const host = "0.0.0.0"
 const Schema = mongoose.Schema;
 
-console.log("yo")
+
 const bcrypt = require('bcrypt')
 const passport = require('passport')
 const flash = require('express-flash')
