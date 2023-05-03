@@ -36,7 +36,7 @@ mongoose.connect("mongodb+srv://MitchZ:T2GRPvC0AkjRuDL8@cluster0.edbmsue.mongodb
   
 // Defining User schema
 const userSchema = new Schema(
-    {RestaurantName: String, Milk: Array, Peanuts: Array, Soy: Array, Wheat: Array, Eggs: Array, Treetnut: Array, Shellfish: Array, Sesame: Array, Fish: Array }
+    {RestaurantName: String, Milk: Array, Peanuts: Array, Soy: Array, Wheat: Array, Eggs: Array, Treetnut: Array, Shellfish: Array, Sesame: Array, Fish: Array, Noneofabove: Array }
 )
 
   
@@ -321,7 +321,8 @@ app.post('/owner', async function (req, res) {
             test6 :req.body.Treenut,
             test7 : req.body.Shellfish,
             test8 : req.body.Sesame,
-            test9 : req.body.Fish
+            test9 : req.body.Fish,
+            test10: req.body.Noneofabove
         }
           
    
@@ -389,6 +390,12 @@ app.post('/owner', async function (req, res) {
 
         await User.updateMany({RestaurantName:restarray.test},{ $push: {Fish:restarray.test9}}).then(function(){
             console.log(`successfully added ${restarray.test9}`)
+    })
+    }
+    if(restarray.test10 != ""){
+
+        await User.updateMany({RestaurantName:restarray.test},{ $push: {Noneofabove:restarray.test10}}).then(function(){
+            console.log(`successfully added ${restarray.test10}`)
     })
     }
 
