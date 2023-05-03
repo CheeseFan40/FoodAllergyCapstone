@@ -1,66 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
+        
+        <link rel="stylesheet" href="CSS/style.css">
+        <title>Comparisons</title>
+        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel ="stylesheet" href ="CSS/test.css">
-        
-        <title>Alex Marconescu</title>
-        
-        </div>
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
+    <style>
+
+body::after {
+            content: "";
+            background: url("Images/dining-acc.jpg");
+            opacity: 0.5;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            z-index: -1;   
+            
+    }
+        .navbar{
+            background-color: rgb(41, 50, 65);
+            top: 0%;
+            left: 0;
+            width: 100%;
+            position: absolute;
+            display: flex;
+
+        }
+
+        .logo{
+            padding-left: 5px;
+
+        }
+
+        .input{
+            padding-top: 200px;
+            text-align: center;
+            border: 2px #5DA271;
+            float: left;
+            width: 50%;
+           
+            /* border: 2px solid #133C55; */
+            /* border-radius: 10px; */
+            /* box-sizing: border-box; */
+        }
+        
+
+
+        .buttons {
+            font-family: "Verdana";
+            color: #E0FBFC;
+            text-align: center;
+            background: #5DA271;
+            font-size: 100%;
+            width: fit-content;
+            padding: 15px 28px;
+            
+        }
+        
+        .bars{
+            padding-top: 100px;
+            
+        }
+
+        .buttonRow{
+            
+            padding-top: 2%;
+            margin: 0;
+            position: relative;
+            top: 50%;
+            white-space: nowrap;
+            overflow: hidden;
+            padding-left: 70%;
+            padding-top: 40px;
+            
+            
+        }
+
+        .account {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        input {
+            margin-left: 40%;
+            width: 30%;
+            border: 2px solid #133C55;
+            padding: 10px 10px;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .signin{
+            margin-top: 15%;
+            background-color: #E0FBFC;
+            border-style: double;
+            border-color: rgb(14, 176, 87);
+            border-width: 2px;
+            border-radius: 8px;
+            width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .texts{
+            text-align: center;
+            font-weight: bolder;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 28px;
+        }
+
+        .submit {
+            font-family: "Verdana";
+            color: #E0FBFC;
+            text-align: center;
+            background: #5DA271;
+            padding: 5px 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .inputer{
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            width: 400px;
+        }
+    </style>
     <body>
+        <img src="Images/CapstoneLogo.png" style="width:250px;height:250px">
+        <button class= "home" onclick="document.location='/'"><b>Home</b></button>
+        <button class= "account" onclick="document.location='account-log-in'"><b>Account</b></button>
+
         <h1 class="register">User Profile Test Functionality</h1>
 
         <form class="former" action="/comparisons" method ="POST">
-            
-            <div class="">
-                <label for="Milk">Milk</label>
-                <input type="text" id="" name="Milk" >
+            <br>
+            <br>
+            <h1>Hello!</h1>
+            <br>
+            <hr>
+            <button type="button" class="collapsible">Set Allergens</button>
+            <div class="content">
+                <br>
+                <div style="margin-left: 10%">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class= "milk" onclick="setPreferenceMilk()"></button>
+                            </td>
+                            <td>
+                                <h3>Milk</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class= "eggs" onclick="setPreferenceEggs()"></button>
+                            </td>
+                            <td>
+                                <h3>Eggs</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class= "peanuts" onclick="setPreferencePeanuts()"></button>
+                            </td>
+                            <td>
+                                <h3>Peanuts</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class= "treenuts" onclick="setPreferenceTreeNuts()"></button>
+                            </td>
+                            <td>
+                                <h3>Tree Nuts</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class= "fish" onclick="setPreferenceFish()"></button>
+                            </td>
+                            <td>
+                                <h3>Fish</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class= "crustaceans" onclick="setPreferenceCrustaceans()"></button>
+                            </td>
+                            <td>
+                                <h3>Crustaceans</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class= "wheat" onclick="setPreferenceWheat()"></button>
+                            </td>
+                            <td>
+                                <h3>Wheat</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class= "soy" onclick="setPreferenceSoy()"></button>
+                            </td>
+                            <td>
+                                <h3>Soy</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class= "sesame" onclick="setPreferenceSesame()"></button>
+                            </td>
+                            <td>
+                                <h3>Sesame</h3>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <button class = "apply"><b>Apply</b></button>
             </div>
-            <div class="">
-                <label for="Soy" >Soy</label>
-                <input type="text" id="" name="Soy" >
+            <br>
+            <hr>
+            <div>
+                <button class="apply" onclick="resetUsername()"><b>Reset Username</b></button>
             </div>
-            <div class="">
-                <label for="Peanuts">Peanuts</label>
-                <input type="text" id="" name="Peanuts" >
+            <br>
+            </body>
+            <div>
+                <button class="apply" onclick="resetPassword()"><b>Reset Password</b></button>
             </div>
-            <div class="">
-                <label for="Wheat" >Wheat</label>
-                <input type="text" id="" name="Wheat" >
-            </div>
-            <div class="">
-                <label for="Eggs">Eggs</label>
-                <input type="text" id="" name="Eggs" >
-            </div>
-            <div class="">
-                <label for="Treenut" >Treenut</label>
-                <input type="text" id="" name="Treenut" >
-            </div>
-            <div class="">
-                <label for="Shellfish">Shellfish</label>
-                <input type="text" id="" name="Shellfish" >
-            </div>
-            <div class="">
-                <label for="Sesame" >Sesame</label>
-                <input type="text" id="" name="Sesame" >
-            </div>
-            <div class="">
-                <label for="Fish">Fish</label>
-                <input type="text" id="" name="Fish" >
-            </div>
-            <section class="submit">
-                <button type="submit"> Submit</button>
-            </section>
-            <div class="stringer" id="stringer">
-                
-            </div>
-            <div class="end">
-            
-            </div>
+            <br>
+            <hr>
         </form>
     </body>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
 
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                 if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+        
+        function setPreferenceMilk()
+        {
+            var milk = true;
+
+            if(milk == true){
+                console.log("Setting new color");
+                document.querySelector(".milk").style.background = "#EE6C4D";
+                milk = false;
+                console.log("Milk is False");
+                return milk;
+            }
+            if(milk == false){
+                console.log("Setting new color");
+                document.querySelector(".milk").style.background = "#5DA271";
+                milk = true;
+                console.log("Milk is True");
+                return milk;
+            }
+        } 
+
+        var eggs = true;
+        function setPreferenceEggs()
+        {
+           if (document.querySelector(".eggs").style.background = "#5DA271") {
+                document.querySelector(".eggs").style.background = "#EE6C4D";
+                eggs = false;
+           }
+           else if(document.querySelector(".eggs").style.background = "#EE6C4D") {
+                 document.querySelector(".eggs").style.background = "#5DA271";
+                 eggs = true;
+            }
+           
+        } 
+
+        var peanuts = true;
+        function setPreferencePeanuts()
+        {
+           if (document.querySelector(".peanuts").style.background = "#5DA271") {
+                document.querySelector(".peanuts").style.background = "#EE6C4D";
+                peanuts = false;
+           }
+           else if(document.querySelector(".peanuts").style.background = "#EE6C4D") {
+                 document.querySelector(".peanuts").style.background = "#5DA271";
+                 peanuts = true;
+            }
+           
+        } 
+
+        var treenuts = true;
+        function setPreferenceTreeNuts()
+        {
+           if (document.querySelector(".treenuts").style.background = "#5DA271") {
+                document.querySelector(".treenuts").style.background = "#EE6C4D";
+                treenuts = false;
+           }
+           else if(document.querySelector(".treenuts").style.background = "#EE6C4D") {
+                 document.querySelector(".treenuts").style.background = "#5DA271";
+                 treenuts = true;
+            }
+           
+        } 
+
+        var fish = true;
+        function setPreferenceFish()
+        {
+           if (document.querySelector(".fish").style.background = "#5DA271") {
+                document.querySelector(".fish").style.background = "#EE6C4D";
+                fish = false;
+           }
+           else if(document.querySelector(".fish").style.background = "#EE6C4D") {
+                 document.querySelector(".fish").style.background = "#5DA271";
+                 fish = true;
+            }
+           
+        } 
+
+        var crustaceans = true;
+        function setPreferenceCrustaceans()
+        {
+           if (document.querySelector(".crustaceans").style.background = "#5DA271") {
+                document.querySelector(".crustaceans").style.background = "#EE6C4D";
+                crustaceans = false;
+           }
+           else if(document.querySelector(".crustaceans").style.background = "#EE6C4D") {
+                 document.querySelector(".crustaceans").style.background = "#5DA271";
+                 crustaceans = true;
+            }
+           
+        } 
+
+        var wheat = true;
+        function setPreferenceWheat()
+        {
+           if (document.querySelector(".wheat").style.background = "#5DA271") {
+                document.querySelector(".wheat").style.background = "#EE6C4D";
+                wheat = false;
+           }
+           else if(document.querySelector(".wheat").style.background = "#EE6C4D") {
+                 document.querySelector(".wheat").style.background = "#5DA271";
+                 wheat = true;
+            }
+           
+        } 
+
+        var soy = true;
+        function setPreferenceSoy()
+        {
+           if (document.querySelector(".soy").style.background = "#5DA271") {
+                document.querySelector(".soy").style.background = "#EE6C4D";
+                soy = false;
+           }
+           else if(document.querySelector(".soy").style.background = "#EE6C4D") {
+                 document.querySelector(".soy").style.background = "#5DA271";
+                 soy = true;
+            }
+           
+        } 
+
+        var sesame = true;
+        function setPreferenceSesame()
+        {
+           if (document.querySelector(".sesame").style.background = "#5DA271") {
+                document.querySelector(".sesame").style.background = "#EE6C4D";
+                sesame = false;
+           }
+           else if(document.querySelector(".sesame").style.background = "#EE6C4D") {
+                 document.querySelector(".sesame").style.background = "#5DA271";
+                 sesame = true;
+            }
+           
+        } 
+    </script>
 </html>

@@ -7,10 +7,10 @@ const mongoose = require('mongoose');
 const express = require('express')
 
 const app = express()
-const port = 8080
+const port = 3000
 const Schema = mongoose.Schema;
 
-
+console.log("yo")
 const bcrypt = require('bcrypt')
 const passport = require('passport')
 const flash = require('express-flash')
@@ -28,9 +28,6 @@ mongoose.connect("mongodb+srv://MitchZ:T2GRPvC0AkjRuDL8@cluster0.edbmsue.mongodb
 }).catch((err) => {
     console.log(err)
 });
-
-
-
   
 // Defining User schema
 const userSchema = new Schema(
@@ -65,6 +62,7 @@ const usrs2 = []
 //var usrs3 = []
 const databaseaccount = []
 var restaurant = ""
+var newytest =""
 
 //Creates and authenticates password
 const createPassport = require('./passportConfig');//exported as initialized
@@ -94,26 +92,29 @@ app.use(passport.session())
 app.use(methodOverride('_method'))
 
 
-app.get('/health', (req, res) => {
-     res.render('health.ejs')
-});
-
-
 // Checks the name with what is visible
-app.get('/', (req, res) => { 
-    res.render('about.ejs')
+app.get('/', async (req, res) => { 
+    
+    var testing = await User.find({}).distinct('RestaurantName')
+    for(let i = 0; i < testing; i++){
+        newytest+= '<option value="' + testing[i] + '">'
+    }
+    //document.getElementById("test").innerHTML = newytest
+    console.log(newytest)
+    res.render('home.ejs',{newytest})
 })
 
 app.get('/restaurant', (req, res) => { 
     res.render('restaurant-choice.ejs')
 })
 
-app.post('/restaurant', (req, res) => { 
+app.post('/', (req, res) => { 
     
     var restname = {
         rest: req.body.RestaurantChoice
     }
     res.redirect('/comparisons')
+    console.log(restname)
     console.log(restname.rest)
     restaurant = restname.rest
 })

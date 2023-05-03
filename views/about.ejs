@@ -2,46 +2,194 @@
     <head>
         <link rel="stylesheet" href="CSS/style.css">
         <title>About</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
+
+
     <style>
-        body {
-            background-image: url('Images/background.png');
-            background-repeat: no-repeat;
-            background-size: 100% 31%;
-        }
 
-        .about {
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-        }
-
-        h3 {
-            margin-left: 10%;
-        }
-
-        h4 {
-            margin-left: 10%;
-            max-width: 80%;
-        }
+body::after {
+        content: "";
+        background: url("Images/dining-about.jpg");
+        opacity: 0.2;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        z-index: -1;   
         
+        }
+
+        .navbar{
+            background-color: rgb(41, 50, 65);
+            top: 0%;
+            left: 0;
+            width: 100%;
+            position: absolute;
+            display: flex;
+
+        }
+
+        .logo{
+            padding-left: 5px;
+
+        }
+
+
+        .buttons {
+            font-family: "Verdana";
+            color: #E0FBFC;
+            text-align: center;
+            background: #5DA271;
+            font-size: 100%;
+            width: fit-content;
+            padding: 15px 28px;
+            
+        }
+
+        .row{
+            margin: auto;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+
+
+        .buttonRow{
+            
+            padding-top: 2%;
+            margin: 0;
+            position: relative;
+            top: 50%;
+            white-space: nowrap;
+            overflow: hidden;
+            padding-left: 70%;
+            padding-top: 40px;
+            
+            
+        }
+
+        .container{
+                display: flex;
+                flex-wrap: wrap;
+                width: 88%;
+                position: relative;
+                margin: 45px;
+                padding-top: 5%;
+                margin-left: auto;
+                margin-right: auto;
+
+                
+            }
+
+            .column{
+                width: 389px;
+                background-color: #E0FBFC;
+                border-style: double;
+                border-color: rgb(14, 176, 87);
+                border-width: 2px;
+                border-radius: 8px;
+                height: 390px;
+                position: relative;
+                margin-top: 4%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 4%;
+                box-shadow: 5px 5px 55px;
+                    
+
+                
+            }
+            
+            img{
+
+                max-width: 100%;
+                
+            }
+
+
+            
+            .cardTitle{
+                padding-top: 2%;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+                font-weight: bolder;
+                font-family: 'Quicksand', sans-serif;
+                font-size: 28px;
+                
+            }
+            
+            
+            .description{
+                font-size: 17px;
+                text-align: center;
+                font-family: 'Quicksand', sans-serif;
+                font-weight: 600;
+            }
+            
+                
     </style>
     
     <body>
-        <img src="Images/CapstoneLogo.png" style="width:250px;height:250px">
-        <button class= "home" onclick="document.location='index'"><b>Home</b></button>
-        <button class= "about" onclick="document.location='about'"><b>About</b></button>
-        <button class= "account" onclick="document.location='account-log-in'"><b>Account</b></button>
-        <br>
-        <br>
-        <h1>Welcome to Meal-Mates</h1>
-        <br>
-        <h3>Who we are</h3>
-        <h4>Meal Mate's will help you decide where you CAN eat based off of what you CAN'T eat. MORE MORE MORE</h4>
-        <br>
-        <hr>
-        <h3>Our Mission</h3>
-        <h4>At Meal Mate's, we understand that dining out with allergies can be stressful due to the risk of consuming allergens and the necessary precautions of communicating with staff.  Our mission is to simplify the process by helping people find restaurants that can accommodate their dietary needs.</h4>
-        <br>
-        <hr>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <img class="logo" src="Images/CapstoneLogo.png" style="width:125px;height:125px">
+            <div class = "buttonRow">
+                <button class="buttons" onclick="document.location='/'"><b>Home</b></button>
+                <button class= "buttons" onclick="document.location='about'"><b>About</b></button>
+                <button class= "buttons" onclick="document.location='account-sign-up'"><b>Account</b></button>
+            </div>
+        </nav>
+
+        <div class="container">
+
+            <div class="column">
+                    <img src="Images/think.png">
+                    <h3 class="cardTitle">Who Are We?</h3>
+                    <p class="description">
+                        We are Team Meal-Mates! A group of Mizzou IT students creating Meal Mates for our Capstone Project and for you!
+                    </p>
+            </div>
+
+            <div class="column">
+                <img src="Images/work.png">
+                <h3 class="cardTitle">Meal-Mates' Goals</h3>
+                <p class="description">
+                    We wish to create a website that helps users with dietary restrictions find restaurants that accommodate their needs,
+                    allowing users to filter by allergen, and find entrees that work for them before they step out the door.
+
+                </p>
+            </div>
+
+            <div class="column">
+                <img src="Images/difficulties.png">
+                <h4 class="cardTitle">Contact Us</h4>
+                <p class="description" >
+                   If you have any questions, complaints, or feedback, you can contact us at TeamMealMates@gmail.com
+                </p>
+            </div>
+
+        </div>
+
     </body>
     <script>
         
