@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="CSS/style.css">
+        <title>Account</title>
+    </head>
+    <style>
+        .account {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        .submit {
+            margin-left: 50%;
+        }
+
+        input {
+            margin-left: 35%;
+        }
+    </style>
+    
+    <body>
+        <img src="Images/MealMatesLogo.png" style="width:250px;height:250px">
+        <button class= "home" onclick="document.location='index'"><b>Home</b></button>
+        <button class= "about" onclick="document.location='about'"><b>About</b></button>
+        <button class= "account" onclick="document.location='account-signed-in'"><b>Account</b></button>
+        <br>
+        <br>
+        <h1>Create Your Account</h1>
+        <br>
+<form action="/account-sign-up" method="POST">
+    <div>
+        <label for="name"><h3>User</h3></label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+        <label for="email"><h3>Email</h3></label>
+        <input type="text" id="email" name="email" required>
+    </div>
+    <div>
+        <label for="password"><h3>Password</h3></label>
+        <input type="text" id="password" name="password" required>
+    </div>
+    <br>
+    <section>
+        <button class= "submit" type="submit">Submit</button>
+    </section>
+    <a href="/account-log-in"><h1>Login</h1></a>
+</form>
+        <br>
+        <br>
+        <br>
+
+    </body>
+    <script>
+        
+    </script>
+</html>

@@ -1,0 +1,175 @@
+h2 {
+    font-family: "Quicksand";
+    text-align: center;
+    color: #E0FBFC;
+}
+
+h1 {
+    font-family: "Verdana";
+    text-align: center;
+    color: #133C55;
+}
+
+h3 {
+    font-family: "Verdana";
+    text-align: left;
+    color: #133C55;
+}
+
+h5 {
+    font-family: "Verdana";
+    text-align: left;
+    color: #EE6C4D;
+}
+
+hr {
+    height: 3px;
+    border-width: 0;
+    background-color:#5DA271;
+    width: 80%;
+}
+
+.home {
+    font-family: "Verdana";
+    color: #E0FBFC;
+    text-align: center;
+    background: #5DA271;
+    padding: 5px 10px;
+    font-size: 200%;
+    width:fit-content;
+    margin-left: 400px;
+    margin-top: 220px;
+    position:absolute;
+}
+
+.about {
+    font-family: "Verdana";
+    color: #E0FBFC;
+    text-align: center;
+    background: #5DA271;
+    padding: 5px 10px;
+    font-size: 200%;
+    margin-left: 530px;
+    margin-top: 220px;
+    position:absolute;
+}
+
+.account {
+    font-family: "Verdana";
+    color: #E0FBFC;
+    text-align: center;
+    background: #5DA271;
+    padding: 5px 10px;
+    font-size: 200%;
+    margin-left: 662px;
+    margin-top: 220px;
+    position:absolute;
+}
+
+.submit {
+    font-family: "Verdana";
+    color: #E0FBFC;
+    text-align: center;
+    background: #5DA271;
+    padding: 5px 20px;
+    font-size: 100%;
+    width: fit-content;
+}
+
+body {
+    background-image: url('../Images/background.png');
+    background-repeat: no-repeat;
+    background-size: 100% 28%;
+}
+
+.apply {
+    font-family: "Verdana";
+    color: #E0FBFC;
+    text-align: center;
+    background: #5DA271;
+    padding: 5px 10px;
+    font-size: 100%;
+    width:fit-content;
+}
+
+input {
+    width: 30%;
+    border: 2px solid #133C55;
+    padding: 10px 10px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.collapsible {
+    font-family: "Verdana";
+    text-align: left;
+    padding: 2px 10px;
+    font-size: 100%;
+}
+
+.active, .collapsible:hover {
+    background-color:darkgrey;
+}
+
+.milk {
+    background:#5DA271;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+}
+
+.eggs {
+    background:#5DA271;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+}
+
+.peanuts {
+    background:#5DA271;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+}
+
+.treenuts {
+    background:#5DA271;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+}
+
+.fish {
+    background:#5DA271;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+}
+
+.crustaceans {
+    background:#5DA271;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+}
+
+.wheat {
+    background:#5DA271;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+}
+
+.soy {
+    background:#5DA271;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+}
+
+.sesame {
+    background:#5DA271;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+}
