@@ -157,6 +157,71 @@ app.post('/comparisons', async function (req, res) {
         sesame = await User.find({RestaurantName:restaurant}).distinct('Sesame')
         fish = await User.find({RestaurantName:restaurant}).distinct('Fish')
         console.log(milk)
+        
+        if(restarray.test1){
+
+            let combine2 = soy.concat(peanuts,wheat,eggs,treenut,shellfish,sesame,fish)
+            var combined = milk.filter(r=> !combine2.includes(r))
+            var next = [... new Set(combined)]
+            e = next
+            console.log(e)
+        }
+        if(restarray.test2){
+            
+            let combine2 = milk.concat(peanuts,wheat,eggs,treenut,shellfish,sesame,fish)
+            var combined = soy.filter(r=> !combine2.includes(r))
+            var next = [... new Set(combined)]
+            e = next
+        }
+        if(restarray.test3){
+            
+            let combine2 = soy.concat(milk,wheat,eggs,treenut,shellfish,sesame,fish)
+            var combined = peanuts.filter(r=> !combine2.includes(r))
+            var next = [... new Set(combined)]
+            e = next
+        }
+        if(restarray.test4){
+            
+            let combine2 = soy.concat(peanuts,milk,eggs,treenut,shellfish,sesame,fish)
+            var combined = wheat.filter(r=> !combine2.includes(r))
+            var next = [... new Set(combined)]
+            e = next
+        }
+        if(restarray.test5){
+            
+            let combine2 = soy.concat(peanuts,wheat,milk,treenut,shellfish,sesame,fish)
+            var combined = eggs.filter(r=> !combine2.includes(r))
+            var next = [... new Set(combined)]
+            e = next
+        }
+        if(restarray.test6){
+            
+            let combine2 = soy.concat(peanuts,wheat,eggs,treenut,shellfish,sesame,fish)
+            var combined = treenut.filter(r=> !combine2.includes(r))
+            var next = [... new Set(combined)]
+            e = next
+        }
+        if(restarray.test7){
+            
+            let combine2 = soy.concat(peanuts,wheat,eggs,treenut,milk,sesame,fish)
+            var combined = shellfish.filter(r=> !combine2.includes(r))
+            var next = [... new Set(combined)]
+            e = next
+        }
+        if(restarray.test8){
+            
+            let combine2 = soy.concat(peanuts,wheat,eggs,treenut,shellfish,milk,fish)
+            var combined = sesame.filter(r=> !combine2.includes(r))
+            var next = [... new Set(combined)]
+            e = next
+        }
+        if(restarray.test9){
+            
+            let combine2 = soy.concat(peanuts,wheat,eggs,treenut,shellfish,sesame,milk)
+            var combined = fish.filter(r=> !combine2.includes(r))
+            var next = [... new Set(combined)]
+            e = next
+        }
 
         res.redirect('/comparisons-result')
     }catch{
