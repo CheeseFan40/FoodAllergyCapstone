@@ -203,7 +203,7 @@ app.get('/account-logged-in', checkAuthenticated, (req, res) => {
 
 //Uses post to login and send to account-logged-in.ejs
 app.post('/account-log-in',checkNotAuthenticated, passport.authenticate('local', {
-    successRedirect: '/account-logged-in',
+    successRedirect: '/owner',
     failureRedirect: '/account-log-in',
     failureFlash: true
 }))
